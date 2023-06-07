@@ -28,6 +28,10 @@ This will run ubESTARFM on a small subset of data (Yanco site) using 4 cores and
 
 Please note the data included in this repository are for demonstration purposes only. If you are interested in having a comprehensive assessment of ubESTARFM, please refer to the datasets published in the CSIRO Data Access Portal (DOI link will be provided), which contains the full set of data (12 OzFlux sites across Australia) used in the paper.
 
+## ResearchGate
+
+The permanent link of this code is at: http://dx.doi.org/10.13140/RG.2.2.24886.68167
+
 ## To cite ubESTARFM
 
 Yu, Y., Renzullo, L. J., McVicar, T. R., Malone, B. P. and Tian, S., 2023. Generating daily 100 m resolution land surface temperature estimates continentally using an unbiased spatiotemporal fusion approach. *Remote Sensing of Environment, Under Review*.
