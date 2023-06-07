@@ -18,7 +18,7 @@ method = 'zero bias' # or you can set it as 'baseline'
 # set the paths of input, tmp and output
 data_path = '1_test_data/'
 tmp_path  = '2_tmp_path/'; if (!dir.exists(tmp_path)) dir.create(tmp_path)
-out_path  = '3_output/fused_result.tif'; if (!dir.exists(out_path)) dir.create(out_path)
+out_path  = '3_output/fused_result.tif'; if (!dir.exists('3_output')) dir.create('3_output')
 
 # load the data
 rst_fine1   = raster(paste0(data_path, 'Landsat_LST_cloudrm_20160205.tif')) # fine resolution image in pair 1
