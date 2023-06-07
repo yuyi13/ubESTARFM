@@ -1,13 +1,16 @@
-
+# This is the R code for the ubESTARFM algorithm
+# This is a variant modified from the ESTARFM algorithm developed by Zhu et al. (2010), which was originally written in Python
+# Contact: Yi Yu (yi.yu1@anu.edu.au)
 
 ubESTARFM = function(w = 25, DN_min = 250, DN_max = 350, patch_long = 200, tmp_path, out_path, method='zero bias',
                     rst_fine1, rst_fine2, rst_coarse1, rst_coarse2, rst_coarse0){
 
 nl = orig_nl = nrow(rst_fine1); ns = orig_ns = ncol(rst_fine1)
 
-n_nl = as.integer(orig_nl / patch_long)
-n_ns = as.integer(orig_ns / patch_long)
+n_nl = as.integer(orig_nl / patch_long); if (n_nl * patch_long < orig_nl) n_nl = n_nl + 1
+n_ns = as.integer(orig_ns / patch_long); if (n_ns * patch_long < orig_ns) n_ns = n_ns + 1
 
+# index of patches
 ind_patch = matrix(NA, n_nl * n_ns, 4)
 
 # get the edge indices for different patches
@@ -48,13 +51,11 @@ D_temp2 = w - matrix(rep(0:(w*2),w*2+1), w*2+1, w*2+1); d2 = D_temp2 ^ 2
 D_D_all = 1.0 + sqrt(d1 + d2) / w
 D_D_all = as.vector(D_D_all)
 
-print(paste0('there are total ', n_nl*n_ns, ' blocks'))
+print(paste0('there are total ', n_nl*n_ns, ' patches'))
 
-foreach (isub = 1:(n_nl * n_ns), .combine=cbind) %dopar% {
-library(raster)
-#for (isub in 1: (n_nl * n_ns)){
+foreach (isub = 1:(n_nl * n_ns), .combine=cbind, .packages=('raster')) %dopar% {
 
-    print(paste0('starting to process the ', isub, 'th block'))
+    print(paste0('starting to process the ', isub, 'th patch'))
 
     col1 = ind_patch[isub, 1]
     col2 = ind_patch[isub, 2]
@@ -153,7 +154,6 @@ library(raster)
                     # In this version, we just set the conversion coefficient as 1.0
                     V_cand = 1.0
 
-
                     # compute the temporal weight
                     difc_pair1 = abs(mean(as.vector(coarse0[aj:bj, ai:bi])[ind_wind_valid] - as.vector(coarse1[aj:bj, ai:bi])[ind_wind_valid])) + 0.01^5
                     difc_pair2 = abs(mean(as.vector(coarse0[aj:bj, ai:bi])[ind_wind_valid] - as.vector(coarse2[aj:bj, ai:bi])[ind_wind_valid])) + 0.01^5
@@ -189,7 +189,6 @@ library(raster)
                         fine2_pixel_value = fine2[j, i]
                     }
 
-
                     # compute the temporal weight
                     difc_pair1 = mean(as.vector(coarse0[aj:bj, ai:bi])[ind_wind_valid] - as.vector(coarse1[aj:bj, ai:bi])[ind_wind_valid]) + 0.01^5
                     difc_pair1_a = abs(difc_pair1)
@@ -204,11 +203,11 @@ library(raster)
     }
 
     pred_rst = raster(fine0, xmn=xmin(rst_fine1), xmx=xmax(rst_fine1), ymn=ymin(rst_fine1), ymx=ymax(rst_fine1), crs=crs(rst_fine1))
-    writeRaster(pred_rst, paste0(tmp_path, 'Thermal_ESTARFM_', isub, '.tif'), overwrite=TRUE)
+    writeRaster(pred_rst, paste0(tmp_path, 'ubESTARFM_', isub, '.tif'), overwrite=TRUE)
 
 }
 
-print('the processing has been done')
+print('The processing has been done')
 
 fl = grep(list.files(tmp_path, full.names=TRUE), pattern='.xml', invert=TRUE, value=TRUE)
 
