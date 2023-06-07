@@ -26,7 +26,7 @@ Rscript 0_code/example.R
 
 This will run ubESTARFM on a small subset of data (Yanco site) using 4 cores and generate the results in the directory `3_output/`.
 
-Please note the data included in this repository are for demonstration purposes only. If you are interested in having a comprehensive assessment of ubESTARFM, please refer to the datasets published in the CSIRO Data Access Portal (DOI link), which contains the full set of data (12 OzFlux sites across Australia) used in the paper.
+Please note the data included in this repository are for demonstration purposes only. If you are interested in having a comprehensive assessment of ubESTARFM, please refer to the datasets published in the CSIRO Data Access Portal (DOI link will be provided), which contains the full set of data (12 OzFlux sites across Australia) used in the paper.
 
 ## To cite ubESTARFM
 
