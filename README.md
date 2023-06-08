@@ -36,11 +36,11 @@ This will generate a `visualisation.png` in output that looks like:
 
 ![](3_output/visualisation.png)
 
-Please note the data included in this repository are for demonstration purposes only. If you are interested in having a comprehensive assessment of ubESTARFM, please refer to the datasets published in the CSIRO Data Access Portal (DOI link will be provided), which contains the full set of data (12 OzFlux sites across Australia) used in the paper.
+Please note the data included in this repository are for demonstration purposes only. If you are interested in having a comprehensive assessment of ubESTARFM, please refer to the datasets published in the CSIRO Data Access Portal (https://data.csiro.au/collection/csiro:59165), which contains the full set of data (12 OzFlux sites across Australia for the period of 2013-2021) used in the paper.
 
 ## ResearchGate
 
-The permanent link of this code is at: http://doi.org/10.13140/RG.2.2.30449.04967
+The permanent link of this code is at: https://doi.org/10.5281/zenodo.8017282
 
 ## To cite ubESTARFM
 
