@@ -2,8 +2,8 @@
 
 # load essential packages
 requiredPackages = c('raster','foreach','doParallel')
-for(k in requiredPackages){
-    if(!require(k, character.only = TRUE)) install.packages(k)
+for (k in requiredPackages){
+    if (!require(k, character.only = TRUE)) install.packages(k, repos='https://cloud.r-project.org')
     library(k, character.only = TRUE)
 }
 

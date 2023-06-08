@@ -1,6 +1,7 @@
 # load required packages
 library(raster)
-if(!require('fields',character.only = TRUE)) install.packages('fields'); library('fields',character.only = TRUE)
+if(!require('fields',character.only = TRUE)) install.packages('fields', repos='https://cloud.r-project.org')
+library(fields)
 
 # colour scheme
 TemperatureRamp =
