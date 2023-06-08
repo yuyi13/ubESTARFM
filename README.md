@@ -18,13 +18,23 @@ install.packages('foreach')
 install.packages('doParallel')
 ```
 
-To see an example of ubESTARFM, simply run the following via the command line:
+To see an example of ubESTARFM, **please make sure you are under the directory** `ubESTARFM/`, then simply run the following via the command line:
 
 ```
 Rscript 0_code/example.R
 ```
 
-This will run ubESTARFM on a small subset of data (Yanco site) using 4 cores and generate the results in the directory `3_output/`.
+This will run ubESTARFM on a small subset of data (Yanco site) using 4 cores and generate a `fused_result.tif` in the directory `3_output/`.
+
+Have a look at the result:
+
+```
+Rscript 0_code/visualise.R
+```
+
+This will generate a `visualisation.png` in output that looks like:
+
+![](3_output/visualisation.png)
 
 Please note the data included in this repository are for demonstration purposes only. If you are interested in having a comprehensive assessment of ubESTARFM, please refer to the datasets published in the CSIRO Data Access Portal (DOI link will be provided), which contains the full set of data (12 OzFlux sites across Australia) used in the paper.
 

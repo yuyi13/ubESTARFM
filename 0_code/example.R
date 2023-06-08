@@ -1,9 +1,11 @@
 # This is an example to run ubESTARFM in parallel
 
 # load essential packages
-library(raster)
-library(foreach)
-library(doParallel)
+requiredPackages = c('raster','foreach','doParallel')
+for(k in requiredPackages){
+    if(!require(k, character.only = TRUE)) install.packages(k)
+    library(k, character.only = TRUE)
+}
 
 # load ubESTARFM
 source('0_code/ubESTARFM.R')
