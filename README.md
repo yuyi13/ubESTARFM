@@ -40,7 +40,9 @@ Please note the data included in this repository are for demonstration purposes 
 
 ## Permalink
 
-The published link of this code is at: https://doi.org/10.5281/zenodo.8017282
+The published lik of this code is at [Zenodo](https://doi.org/10.5281/zenodo.8017282).
+
+You can also find an archived version at [ResearchGate](http://doi.org/10.13140/RG.2.2.30449.04967).
 
 ## To cite ubESTARFM
 
