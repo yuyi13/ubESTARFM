@@ -40,7 +40,7 @@ Please note the data included in this repository are for demonstration purposes 
 
 ## Permalink
 
-If you are interested in having a comprehensive assessment of ubESTARFM, please refer to the datasets published in the [CSIRO Data Access Portal](https://data.csiro.au/collection/csiro:59165), which contains the full set of data (12 OzFlux sites across Australia for the period of 2013-2021) used in our RSE paper.
+If you are interested in having a comprehensive assessment of ubESTARFM, please refer to the dataset published in the [CSIRO Data Access Portal](https://doi.org/10.25919/b77m-8n31), which contains the full set of data (12 OzFlux sites across Australia for the period of 2013-2021) used in our RSE paper.
 
 The published link of this code is at [Zenodo](https://doi.org/10.5281/zenodo.8017282).
 
