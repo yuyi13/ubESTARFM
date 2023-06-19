@@ -18,7 +18,7 @@ install.packages('foreach')
 install.packages('doParallel')
 ```
 
-To see an example of ubESTARFM, **please make sure you are under the directory** `ubESTARFM/`, then simply run the following via the command line:
+To see an example of ubESTARFM, <mark >**please make sure you are under the directory**</mark> `ubESTARFM/`, then simply run the following via the command line:
 
 ```
 Rscript 0_code/example.R
