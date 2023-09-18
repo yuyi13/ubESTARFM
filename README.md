@@ -1,6 +1,6 @@
 # Unbiased ESTARFM (ubESTARFM) in R
 
-[![DOI](https://zenodo.org/record/8299638)](https://doi.org/10.5281/zenodo.8017282)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.8017282.svg)](https://doi.org/10.5281/zenodo.8017282)
 
 ## Overview
 
