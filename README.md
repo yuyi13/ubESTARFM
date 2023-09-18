@@ -1,5 +1,9 @@
 # Unbiased ESTARFM (ubESTARFM) in R
 
+[![Paper](https://doi.org/10.1016/j.rse.2023.113784)](https://doi.org/10.1016/j.rse.2023.113784)
+[![Zenodo](https://doi.org/10.5281/zenodo.8017282)](https://doi.org/10.5281/zenodo.8017282)
+[![Data](https://doi.org/10.25919/b77m-8n31)](https://doi.org/10.25919/b77m-8n31)
+
 ## Overview
 
 Fine spatial resolution land surface temperature (LST) data are crucial to study heterogeneous landscapes (e.g., agricultural and urban). Some well-known spatiotemporal fusion methods like the Spatial and Temporal Adaptive Reflectance Fusion Model (STARFM; Gao et al., 2006) and the Enhanced STARFM (ESTARFM; Zhu et al., 2010), which were originally developed to fuse surface reflectance data, may not be suitable for direct application in LST studies due to the high sub-diurnal dynamics of LST. To address this, we proposed a variant of ESTARFM, referred to as the unbiased ESTARFM (ubESTARFM), specifically designed to accommodate the high temporal dynamics of LST to generate fine-resolution LST estimates. 
