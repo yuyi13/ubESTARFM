@@ -1,6 +1,8 @@
 # Unbiased ESTARFM (ubESTARFM) in R
 
+[![License: CCBY](https://img.shields.io/badge/License-CC%20BY%204.0-yellow.svg)](https://creativecommons.org/licenses/by/4.0/)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.8017282.svg)](https://doi.org/10.5281/zenodo.8017282)
+[![Twitter Follow](https://img.shields.io/twitter/follow/yy_nash13?style=social)](https://twitter.com/yy_nash13)
 
 ## Overview
 
