@@ -1,8 +1,8 @@
 # Unbiased ESTARFM (ubESTARFM) in R
 
-[![Paper](https://doi.org/10.1016/j.rse.2023.113784)](https://doi.org/10.1016/j.rse.2023.113784)
-[![Zenodo](https://doi.org/10.5281/zenodo.8017282)](https://doi.org/10.5281/zenodo.8017282)
-[![Data](https://doi.org/10.25919/b77m-8n31)](https://doi.org/10.25919/b77m-8n31)
+[![DOI](https://doi.org/10.1016/j.rse.2023.113784)](https://doi.org/10.1016/j.rse.2023.113784)
+[![DOI](https://doi.org/10.5281/zenodo.8017282)](https://doi.org/10.5281/zenodo.8017282)
+[![DOI](https://doi.org/10.25919/b77m-8n31)](https://doi.org/10.25919/b77m-8n31)
 
 ## Overview
 
