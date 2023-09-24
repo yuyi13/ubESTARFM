@@ -51,7 +51,7 @@ D_temp2 = w - matrix(rep(0:(w*2),w*2+1), w*2+1, w*2+1); d2 = D_temp2 ^ 2
 D_D_all = 1.0 + sqrt(d1 + d2) / w
 D_D_all = as.vector(D_D_all)
 
-print(paste0('There are total ', n_nl*n_ns, ' patches'))
+print(paste0('There are ', n_nl*n_ns, ' patches in total.'))
 
 print('**********************************')
 print('* Launch the ubESTARFM algorithm *')
@@ -174,7 +174,7 @@ foreach (isub = 1:(n_nl * n_ns), .combine=cbind, .packages=('raster')) %dopar% {
                     # the final prediction
                     fine0[j, i] = T_weight1 * fine01 + T_weight2 * fine02
                     # revise the abnormal prediction
-                    if (fine0[j, i] <= DN_min | fine0[j, i] >= DN_max){
+                    if (!is.na(fine0[j, i]) & (fine0[j, i] <= DN_min | fine0[j, i] >= DN_max)){
 
                         fine01 = sum(weight * finecand[1,])
                         fine02 = sum(weight * finecand[2,])
@@ -213,7 +213,7 @@ foreach (isub = 1:(n_nl * n_ns), .combine=cbind, .packages=('raster')) %dopar% {
 
 print('The processing has been done')
 
-fl = grep(list.files(tmp_path, full.names=TRUE), pattern='.xml', invert=TRUE, value=TRUE)
+fl = list.files(tmp_path, pattern='.tif$', full.names=TRUE)
 
 rst_stk = stack(fl)
 final_rst = calc(rst_stk, fun = mean, na.rm = TRUE)

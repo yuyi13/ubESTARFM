@@ -55,7 +55,7 @@ If you found this repository helpful, please kindly consider citing:
 
 - Yu, Y., Renzullo, L. J., McVicar, T. R., Malone, B. P. and Tian, S., 2023. Generating daily 100 m resolution land surface temperature estimates continentally using an unbiased spatiotemporal fusion approach. *Remote Sensing of Environment, 297*, 113784. https://doi.org/10.1016/j.rse.2023.113784
 
-- Yu, Y., Renzullo, L.J., Tian, S. and Malone, B.P., 2023. An unbiased spatiotemporal fusion approach to generate daily 100 m spatial resolution land surface temperature over a continental scale, *EGU General Assembly 2023, Vienna, Austria, 24-28 April 2023*, EGU23-1501. https://doi.org/10.5194/egusphere-egu23-1501.
+- Yu, Y., Renzullo, L. J., Tian, S. and Malone, B. P., 2023. An unbiased spatiotemporal fusion approach to generate daily 100 m spatial resolution land surface temperature over a continental scale, *EGU General Assembly 2023, Vienna, Austria, 24-28 April 2023*, EGU23-1501. https://doi.org/10.5194/egusphere-egu23-1501.
 
 ## References
 
