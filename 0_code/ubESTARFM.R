@@ -2,7 +2,7 @@
 # This is a variant modified from the ESTARFM algorithm developed by Zhu et al. (2010), which was originally written in Python
 # Contact: Yi Yu (yi.yu1@anu.edu.au)
 
-ubESTARFM = function(w = 25, DN_min = 250, DN_max = 350, patch_long = 200, tmp_path, out_path, method='zero bias',
+ubESTARFM = function(w = 25, DN_min, DN_max, patch_long = 200, tmp_path, out_path, method='zero bias',
                     rst_fine1, rst_fine2, rst_coarse1, rst_coarse2, rst_coarse0){
 
 nl = orig_nl = nrow(rst_fine1); ns = orig_ns = ncol(rst_fine1)
