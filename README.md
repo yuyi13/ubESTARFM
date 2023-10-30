@@ -11,14 +11,14 @@
 - [Background](#background)
 - [Usage](#usage)
 - [LST processing scripts](#lst-processing-scripts)
-- [IMPORTANT update for *in-situ* LST from OzFlux](#important-update-for-in-situ-lst-from-ozflux)
+    - [IMPORTANT NOTE for *in-situ* LST from OzFlux](#important-note-for-in-situ-lst-from-ozflux)
 - [Permalink](#permalink)
 - [To cite ubESTARFM](#to-cite-ubestarfm)
 - [References](#references)
 
 ## Overview
 
-This is the repository for the ubESTARFM algorithm. The algorithm is described in detail in our paper published in *Remote Sensing of Environment* ([Yu et al., 2023](https://doi.org/10.1016/j.rse.2023.113784)). Apart from the [algorithm](#usage), we also provided the [scripts for processing and fusing satellite LST data](#lst-processing-scripts), as well as **AN IMPORTANT UPDATE** for processing [*in-situ* LST data from OzFlux sites](#important-update-for-in-situ-lst-from-ozflux).
+This is the repository for the ubESTARFM algorithm. The algorithm is described in detail in our paper published in [Yu et al. (2023)](https://doi.org/10.1016/j.rse.2023.113784). Apart from the [algorithm](#usage), we also provided the [scripts about how we processed and evaluated the LST data](#lst-processing-scripts).
 
 ## Background
 
@@ -62,13 +62,13 @@ Please note the data included in this repository are for demonstration purposes 
 
 ## LST processing scripts
 
-The scripts for processing and fusing satellite LST are archived in `4_lst_processing` for **reference purposes only**. The scripts are ordered in sequence 0-9, which follows the experimental design as below. However, it is unlikely you can run the scripts directly as the input data are massive and not available here.
+The scripts for processing, fusing and evaluating satellite LST are archived in `4_lst_processing` for **reference purposes only**. The scripts are ordered in sequence 0-9, which follows the experimental design as below. However, it is unlikely you can run the scripts directly as the input data are massive and not available here.
 
 ![](figures/experimental-design.png)
 
-## IMPORTANT update for *in-situ* LST from OzFlux
+### IMPORTANT NOTE for *in-situ* LST from OzFlux
 
-TBC
+We have found an alternative strategy in processing *in-situ* LST, which does not consider the daylight saving time and expilctly claims the 'seconds' timestep in the TOI (time of interests). This strategy is expected to better coincides with the satellite overpass time. Please refer to the script `4_lst_processing/0_process_ozflux_updated.R` for more details.
 
 ## Permalink
 
