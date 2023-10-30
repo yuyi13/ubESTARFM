@@ -5,11 +5,28 @@
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.8017282.svg)](https://doi.org/10.5281/zenodo.8017282)
 [![Twitter Follow](https://img.shields.io/twitter/follow/yy_nash13?style=social)](https://twitter.com/yy_nash13)
 
+## Contents
+
+- [Overview](#overview)
+- [Background](#background)
+- [Usage](#usage)
+- [Permalink](#permalink)
+- [LST processing scripts](#lst-processing-scripts)
+- [IMPORTANT update for *in-situ* LST from OzFlux](#important-update-for-in-situ-lst-from-ozflux)
+- [To cite ubESTARFM](#to-cite-ubestarfm)
+- [References](#references)
+
 ## Overview
+
+This is the repository for the ubESTARFM algorithm. The algorithm is described in detail in our paper published in *Remote Sensing of Environment* ([Yu et al., 2023](https://doi.org/10.1016/j.rse.2023.113784)). Apart from the [algorithm](#usage), we also provided the [scripts for processing and fusing satellite LST data](#lst-processing-scripts), as well as **AN IMPORTANT UPDATE** for processing [*in-situ* LST data from OzFlux sites](#important-update-for-in-situ-lst-from-ozflux).
+
+## Background
 
 Fine spatial resolution land surface temperature (LST) data are crucial to study heterogeneous landscapes (e.g., agricultural and urban). Some well-known spatiotemporal fusion methods like the Spatial and Temporal Adaptive Reflectance Fusion Model (STARFM; Gao et al., 2006) and the Enhanced STARFM (ESTARFM; Zhu et al., 2010), which were originally developed to fuse surface reflectance data, may not be suitable for direct application in LST studies due to the high sub-diurnal dynamics of LST. To address this, we proposed a variant of ESTARFM, referred to as the unbiased ESTARFM (ubESTARFM), specifically designed to accommodate the high temporal dynamics of LST to generate fine-resolution LST estimates. 
 
 In ubESTARFM, we implement a local bias correction on the central pixel and similar fine-resolution pixels within the moving window using the mean value of corresponding coarse-resolution pixels as reference. By applying this linear scaling approach, we can scale the systematic biases of the fine-resolution data to a same level of the corresponding coarse resolution data in each moving window, while maintaining the variation and spatial details of fine resolution data.
+
+![](figures/local-bias-correction.png)
 
 ## Usage
 
@@ -49,13 +66,21 @@ If you are interested in having a comprehensive assessment of ubESTARFM, please 
 
 The published link of this code is at [Zenodo](https://doi.org/10.5281/zenodo.8017282). You can also find an archived version at [ResearchGate](https://www.researchgate.net/publication/371376456_Unbiased_ESTARFM_ubESTARFM).
 
+## LST processing scripts
+
+The scripts for processing and fusing satellite LST are archived in `4_lst_processing` for **reference purposes only**. The scripts are ordered in sequence 0-9, which follows the experimental design as below. However, it is unlikely you can run the scripts directly as the input data are massive and not available here.
+
+![](figures/experimental-design.png)
+
+## IMPORTANT update for *in-situ* LST from OzFlux
+
+TBC
+
 ## To cite ubESTARFM
 
 If you found this repository helpful, please kindly consider citing:
 
 - Yu, Y., Renzullo, L. J., McVicar, T. R., Malone, B. P. and Tian, S., 2023. Generating daily 100 m resolution land surface temperature estimates continentally using an unbiased spatiotemporal fusion approach. *Remote Sensing of Environment, 297*, 113784. https://doi.org/10.1016/j.rse.2023.113784
-
-- Yu, Y., Renzullo, L. J., Tian, S. and Malone, B. P., 2023. An unbiased spatiotemporal fusion approach to generate daily 100 m spatial resolution land surface temperature over a continental scale, *EGU General Assembly 2023, Vienna, Austria, 24-28 April 2023*, EGU23-1501. https://doi.org/10.5194/egusphere-egu23-1501.
 
 ## References
 
