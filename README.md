@@ -10,9 +10,9 @@
 - [Overview](#overview)
 - [Background](#background)
 - [Usage](#usage)
-- [Permalink](#permalink)
 - [LST processing scripts](#lst-processing-scripts)
 - [IMPORTANT update for *in-situ* LST from OzFlux](#important-update-for-in-situ-lst-from-ozflux)
+- [Permalink](#permalink)
 - [To cite ubESTARFM](#to-cite-ubestarfm)
 - [References](#references)
 
@@ -60,12 +60,6 @@ This will generate a `visualisation.png` in output that looks like:
 
 Please note the data included in this repository are for demonstration purposes only.
 
-## Permalink
-
-If you are interested in having a comprehensive assessment of ubESTARFM, please refer to the dataset published in the [CSIRO Data Access Portal](https://doi.org/10.25919/b77m-8n31), which contains the full set of data (12 OzFlux sites across Australia for the period of 2013-2021) used in our RSE paper.
-
-The published link of this code is at [Zenodo](https://doi.org/10.5281/zenodo.8017282). You can also find an archived version at [ResearchGate](https://www.researchgate.net/publication/371376456_Unbiased_ESTARFM_ubESTARFM).
-
 ## LST processing scripts
 
 The scripts for processing and fusing satellite LST are archived in `4_lst_processing` for **reference purposes only**. The scripts are ordered in sequence 0-9, which follows the experimental design as below. However, it is unlikely you can run the scripts directly as the input data are massive and not available here.
@@ -75,6 +69,12 @@ The scripts for processing and fusing satellite LST are archived in `4_lst_proce
 ## IMPORTANT update for *in-situ* LST from OzFlux
 
 TBC
+
+## Permalink
+
+If you are interested in having a comprehensive assessment of ubESTARFM, please refer to the dataset published in the [CSIRO Data Access Portal](https://doi.org/10.25919/b77m-8n31), which contains the full set of data (12 OzFlux sites across Australia for the period of 2013-2021) used in our RSE paper.
+
+The published link of this code is at [Zenodo](https://doi.org/10.5281/zenodo.8017282). You can also find an archived version at [ResearchGate](https://www.researchgate.net/publication/371376456_Unbiased_ESTARFM_ubESTARFM).
 
 ## To cite ubESTARFM
 
