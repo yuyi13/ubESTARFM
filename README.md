@@ -68,7 +68,7 @@ The scripts for processing, fusing and evaluating satellite LST are archived in 
 
 ### IMPORTANT NOTE for *in-situ* LST from OzFlux
 
-We have found an alternative strategy in processing *in-situ* LST, which does not consider the daylight saving time and expilctly claims the 'seconds' timestep in the TOI (time of interests). This strategy is expected to better coincides with the satellite overpass time. Please refer to the script `4_lst_processing/0_process_ozflux_updated.R` for more details.
+We have found an alternative strategy in processing *in-situ* LST, which does not consider the daylight saving time and expilctly claims the 'seconds' timestep in the TOI (time of interests). Compared to the strategy used in our RSE paper (i.e., `4_lst_processing/0_process_ozflux_rse_version.R`), this strategy is expected to better coincides with the satellite overpass time. Please refer to the script `4_lst_processing/0_process_ozflux_updated.R` for more details.
 
 ## Permalink
 
