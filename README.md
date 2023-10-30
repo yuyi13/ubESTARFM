@@ -10,7 +10,7 @@
 - [Overview](#overview)
 - [Background](#background)
 - [Usage](#usage)
-- [LST processing scripts](#lst-processing-scripts)
+- [LST processing scripts (will be updated soon!)](#lst-processing-scripts)
     - [IMPORTANT NOTE for *in-situ* LST from OzFlux](#important-note-for-in-situ-lst-from-ozflux)
 - [Permalink](#permalink)
 - [To cite ubESTARFM](#to-cite-ubestarfm)
