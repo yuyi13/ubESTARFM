@@ -18,7 +18,7 @@
 
 ## Overview
 
-This is the repository for the ubESTARFM algorithm. The algorithm is described in detail in our paper published in [Yu et al. (2023)](https://doi.org/10.1016/j.rse.2023.113784). Apart from the [algorithm](#usage), we also provided the [scripts about how we processed and evaluated the LST data](#lst-processing-scripts).
+This is the repository for the ubESTARFM algorithm, which was described in detail in [Yu et al. (2023)](https://doi.org/10.1016/j.rse.2023.113784). Apart from the [algorithm](#usage), we also provided the [scripts about how we processed and evaluated the LST data](#lst-processing-scripts) herein.
 
 ## Background
 
