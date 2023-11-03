@@ -8,13 +8,15 @@ library(doParallel)
 
 # convert integer to binary
 number2binary = function(number, noBits) {
-       binary_vector = rev(as.numeric(intToBits(number)))
-       if(missing(noBits)) {
-          return(binary_vector)
-       } else {
-          binary_vector[-(1:(length(binary_vector) - noBits))]
-       }
+    
+    binary_vector = rev(as.numeric(intToBits(number)))
+    
+    if(missing(noBits)) {
+        return(binary_vector)
+    } else {
+        binary_vector[-(1:(length(binary_vector) - noBits))]
     }
+}
 
 site = read.csv('/datasets/work/d61-af-soilmoisture/work/lst_project/0_code/study_sites.csv')
 path2clod = '/datasets/work/d61-af-soilmoisture/work/ECOSTRESS/CLOUDMASK/'
