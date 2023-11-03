@@ -14,6 +14,7 @@
     - [IMPORTANT NOTE for *in-situ* LST from OzFlux](#important-note-for-in-situ-lst-from-ozflux)
 - [Permalink](#permalink)
 - [To cite ubESTARFM](#to-cite-ubestarfm)
+- [Conference talk](#conference-talk)
 - [References](#references)
 
 ## Overview
@@ -43,7 +44,7 @@ install.packages('doParallel')
 To see an example of ubESTARFM, **please make sure you are under the directory** `ubESTARFM/`, then simply run the following via the command line:
 
 ```
-Rscript 0_code/example.R
+Rscript 0_algorithm/example.R
 ```
 
 This will run ubESTARFM on a small subset of data (Yanco site) using 4 cores and generate a `fused_result.tif` in the directory `3_output/`.
@@ -51,7 +52,7 @@ This will run ubESTARFM on a small subset of data (Yanco site) using 4 cores and
 Have a look at the result:
 
 ```
-Rscript 0_code/visualise.R
+Rscript 0_algorithm/visualise.R
 ```
 
 This will generate a `visualisation.png` in output that looks like:
@@ -81,6 +82,10 @@ The published link of this code is at [Zenodo](https://doi.org/10.5281/zenodo.80
 If you found this repository helpful, please kindly consider citing:
 
 - Yu, Y., Renzullo, L. J., McVicar, T. R., Malone, B. P. and Tian, S., 2023. Generating daily 100 m resolution land surface temperature estimates continentally using an unbiased spatiotemporal fusion approach. *Remote Sensing of Environment, 297*, 113784. https://doi.org/10.1016/j.rse.2023.113784
+
+## Conference talk
+
+- Yu, Y., Renzullo, L. J., Tian, S. and Malone, B. P., 2023. An unbiased spatiotemporal fusion approach to generate daily 100 m spatial resolution land surface temperature over a continental scale, *EGU General Assembly 2023, Vienna, Austria, 24-28 April*, EGU23-1501. https://doi.org/10.5194/egusphere-egu23-1501
 
 ## References
 
