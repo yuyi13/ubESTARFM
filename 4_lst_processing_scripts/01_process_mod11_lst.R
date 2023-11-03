@@ -7,9 +7,9 @@ library(foreach)
 library(doParallel)
 
 # we have part of the data downloaded in scratch and part of the data archived in u39
-# u39 is a project name in NCI (Australia's national supercomputer)
-path2modis_downloaded = '/g/data/u39/public/data/modis/lpdaac-tiles-c6/MOD11A1.006/'
-path2modis_u39 = '/scratch/os22/yy4778/MODIS_data/LST_daytime_daily/hdf'
+# u39 is a project name in NCI (Australian national HPC cluster)
+path2modis_u39 = '/g/data/u39/public/data/modis/lpdaac-tiles-c6/MOD11A1.006/'
+path2modis_downloaded = '/scratch/os22/yy4778/MODIS_data/LST_daytime_daily/hdf'
 
 # geo-template for australia
 PROJ_LATLON = '+proj=longlat +datum=WGS84'
