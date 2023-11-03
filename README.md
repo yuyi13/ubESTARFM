@@ -10,7 +10,7 @@
 - [Overview](#overview)
 - [Background](#background)
 - [Usage](#usage)
-- [LST processing scripts (will be updated soon!)](#lst-processing-scripts)
+- [LST processing scripts (will be gradually updated)](#lst-processing-scripts)
     - [IMPORTANT NOTE for *in-situ* LST from OzFlux](#important-note-for-in-situ-lst-from-ozflux)
 - [Permalink](#permalink)
 - [To cite ubESTARFM](#to-cite-ubestarfm)
@@ -63,7 +63,7 @@ Please note the data included in this repository are for demonstration purposes 
 
 ## LST processing scripts
 
-The scripts for processing, fusing and evaluating satellite LST are archived in `4_lst_processing/` for **reference purposes only**. The scripts are ordered in sequence 0-9, which follows the experimental design as below. However, it is unlikely you can run the scripts directly as the input data are massive and not available here.
+The scripts for processing, fusing and evaluating satellite LST are archived in `4_lst_processing/` for **reference purposes only**. The scripts are ordered in sequence 00-10, which follows the experimental design as below. However, it is unlikely you can run the scripts directly as the input data are massive and not available here.
 
 ![](figures/experimental-design.png)
 
