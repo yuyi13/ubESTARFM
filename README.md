@@ -10,7 +10,7 @@
 - [Overview](#overview)
 - [Background](#background)
 - [Usage](#usage)
-- [LST processing scripts (will be gradually updated)](#lst-processing-scripts)
+- [LST processing scripts](#lst-processing-scripts)
     - [IMPORTANT NOTE for *in-situ* LST from OzFlux](#important-note-for-in-situ-lst-from-ozflux)
 - [Permalink](#permalink)
 - [To cite ubESTARFM](#to-cite-ubestarfm)
@@ -77,7 +77,7 @@ All the updated OzFlux LST data are available at `5_ozflux_lst/`.
 
 If you are interested in having a comprehensive assessment of ubESTARFM, please refer to the dataset published in the [CSIRO Data Access Portal](https://doi.org/10.25919/b77m-8n31), which contains the full set of data (12 OzFlux sites across Australia for the period of 2013-2021) used in our RSE paper.
 
-The published link of this code is at [Zenodo](https://doi.org/10.5281/zenodo.8017282). You can also find an archived version at [ResearchGate](https://www.researchgate.net/publication/371376456_Unbiased_ESTARFM_ubESTARFM).
+The published link of this code is at [Zenodo](https://doi.org/10.5281/zenodo.8017282). You can also find a lite version at [ResearchGate](https://www.researchgate.net/publication/371376456_Unbiased_ESTARFM_ubESTARFM).
 
 ## To cite ubESTARFM
 
