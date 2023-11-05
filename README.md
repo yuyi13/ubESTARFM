@@ -63,13 +63,15 @@ Please note the data included in this repository are for demonstration purposes 
 
 ## LST processing scripts
 
-The scripts for processing, fusing and evaluating satellite LST are archived in `4_lst_processing/` for **reference purposes only**. The scripts are ordered in sequence 00-10, which follows the experimental design as below. However, it is unlikely you can run the scripts directly as the input data are massive and not available here.
+The scripts for processing, fusing and evaluating satellite LST are archived in `4_lst_processing_scripts/` for **reference purposes only**. The scripts are ordered in sequence 00-10, which follows the experimental design as below. However, it is unlikely you can run the scripts directly as the input data are massive and not available here.
 
 ![](figures/experimental-design.png)
 
 ### IMPORTANT NOTE for *in-situ* LST from OzFlux
 
-We have found an alternative strategy in processing *in-situ* LST, which does not consider the daylight saving time and expilctly claims the 'seconds' timestep in the TOI (time of interests). Compared to the strategy used in our RSE paper (i.e., `4_lst_processing/0_process_ozflux_rse_version.R`), this strategy is expected to better coincides with the satellite overpass time. Please refer to the script `4_lst_processing/0_process_ozflux_updated.R` for more details.
+We have found an alternative strategy in processing *in-situ* LST, which does not consider the daylight saving time and expilctly claims the 'seconds' timestep in the TOI (time of interests). Compared to the strategy used in our RSE paper (i.e., `4_lst_processing_scripts/00_process_ozflux_rse_version.R`), this strategy is expected to better coincides with the satellite overpass time. Please refer to the script `4_lst_processing_scripts/00_process_ozflux_updated.R` for more details.
+
+All the updated OzFlux LST data are available at `5_ozflux_lst/`.
 
 ## Permalink
 
