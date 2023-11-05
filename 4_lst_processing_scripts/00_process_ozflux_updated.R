@@ -30,8 +30,8 @@ foreach (i=1:nrow(ozfluxLL), .combine=cbind, .packages=c('ncdf4', 'raster', 'lub
 
 	# read netcdf files from ozflux server
     x = nc_open(paste0('https://dap.ozflux.org.au/thredds/dodsC/ozflux/sites/',sitename,'/L3/default/',sitename,'_L3.nc'))
-    L_u = ncvar_get(x, 'Flu')
-    L_d = ncvar_get(x, 'Fld')
+    L_u = ncvar_get(x, 'Flu'); L_u[L_u == -9999] = NA
+    L_d = ncvar_get(x, 'Fld'); L_d[L_d == -9999] = NA
     local_time = ncvar_get(x, 'time')
 	nc_close(x)
 
@@ -53,7 +53,9 @@ foreach (i=1:nrow(ozfluxLL), .combine=cbind, .packages=c('ncdf4', 'raster', 'lub
 
 		flux_lst = ((L_u[k] - (1 - emis_value) * L_d[k]) / (5.670374e-8 * emis_value)) ^ (1/4)
 		print(flux_lst)
-		write.table(cbind(format(local_time[k], '%Y-%m-%d %H:%M'), L_u[k], L_d[k], emis_value, flux_lst),
+		write.table(cbind(format(local_time[k], '%Y-%m-%d %H:%M'), 
+					round(L_u[k], 4), round(L_d[k], 4),
+					emis_value, round(flux_lst, 4)),
 					ofile, row.names=FALSE, col.names=FALSE, sep=',', quote=FALSE, append=TRUE)
     }
 }

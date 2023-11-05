@@ -2,7 +2,7 @@
 # This is the ozflux processing script used in our RSE paper                                          #
 # which used a temporal window to filter in-situ lst data, and considered local daylight saving zones #
 # however, a more precise method may be always using the local standard time                          #
-# and expilctly claiming the 'second' timestep in the TOI (time of interests)                         #
+# and expilctly claiming the 'seconds' timestep in the TOI (time of interests)                        #
 # hence we have an updated version of this script in this repo                                        #
 # *************************************************************************************************** #
 
@@ -34,8 +34,8 @@ foreach (i=1:nrow(ozfluxLL), .combine=cbind, .packages=c('ncdf4', 'raster')) %do
 
 	# read netcdf files from ozflux server
     x = nc_open(paste0('https://dap.ozflux.org.au/thredds/dodsC/ozflux/sites/',sitename,'/L3/default/',sitename,'_L3.nc'))
-    L_u = ncvar_get(x, 'Flu')
-    L_d = ncvar_get(x, 'Fld')
+    L_u = ncvar_get(x, 'Flu'); L_u[L_u == -9999] = NA
+    L_d = ncvar_get(x, 'Fld'); L_d[L_d == -9999] = NA
     local_time = ncvar_get(x, 'time')
 	nc_close(x)
 
@@ -58,7 +58,7 @@ foreach (i=1:nrow(ozfluxLL), .combine=cbind, .packages=c('ncdf4', 'raster')) %do
 
 		flux_lst = ((L_u[k] - (1 - emis_value) * L_d[k]) / (5.670374e-8 * emis_value)) ^ (1/4)
 		print(flux_lst)
-		write.table(cbind(format(local_time[k], '%Y-%m-%d %H:%M'), L_u[k], L_d[k], emis_value, flux_lst),
+		write.table(cbind(format(local_time[k], '%Y-%m-%d %H:%M'), L_u[k], L_d[k], emis_value, round(flux_lst, 3)),
 					ofile, row.names=FALSE, col.names=FALSE, sep=',', quote=FALSE, append=TRUE)
     }
 }
