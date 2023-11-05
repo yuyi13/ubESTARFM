@@ -58,7 +58,9 @@ foreach (i=1:nrow(ozfluxLL), .combine=cbind, .packages=c('ncdf4', 'raster')) %do
 
 		flux_lst = ((L_u[k] - (1 - emis_value) * L_d[k]) / (5.670374e-8 * emis_value)) ^ (1/4)
 		print(flux_lst)
-		write.table(cbind(format(local_time[k], '%Y-%m-%d %H:%M'), L_u[k], L_d[k], emis_value, round(flux_lst, 3)),
+		write.table(cbind(format(local_time[k], '%Y-%m-%d %H:%M'), 
+					round(L_u[k], 4), round(L_d[k], 4),
+					emis_value, round(flux_lst, 4)),
 					ofile, row.names=FALSE, col.names=FALSE, sep=',', quote=FALSE, append=TRUE)
     }
 }
