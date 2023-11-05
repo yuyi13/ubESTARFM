@@ -69,7 +69,7 @@ The scripts for processing, fusing and evaluating satellite LST are archived in 
 
 ### IMPORTANT NOTE for *in-situ* LST from OzFlux
 
-We have found an alternative strategy in processing *in-situ* LST, which does not consider the daylight saving time and expilctly claims the 'seconds' timestep in the TOI (time of interests). Compared to the strategy used in our RSE paper (i.e., `4_lst_processing_scripts/00_process_ozflux_rse_version.R`), this strategy is expected to better coincides with the satellite overpass time. Please refer to the script `4_lst_processing_scripts/00_process_ozflux_updated.R` for more details.
+We have found an alternative strategy in processing *in-situ* LST, which does not consider the daylight saving time and does expilctly claim the 'seconds' timestep in the TOI (Time of Interests). Compared to the strategy used in our RSE paper (i.e., `4_lst_processing_scripts/00_process_ozflux_rse_version.R`), this strategy is expected to better coincide with the satellite overpass time. Please refer to the script `4_lst_processing_scripts/00_process_ozflux_updated.R` for more details.
 
 All the updated OzFlux LST data are available at `5_ozflux_lst/`.
 
@@ -83,7 +83,15 @@ The published link of this code is at [Zenodo](https://doi.org/10.5281/zenodo.80
 
 If you found this repository helpful, please kindly consider citing:
 
-- Yu, Y., Renzullo, L. J., McVicar, T. R., Malone, B. P. and Tian, S., 2023. Generating daily 100 m resolution land surface temperature estimates continentally using an unbiased spatiotemporal fusion approach. *Remote Sensing of Environment, 297*, 113784. https://doi.org/10.1016/j.rse.2023.113784
+@article{YU2023113784,
+title = {Generating daily 100 m resolution land surface temperature estimates continentally using an unbiased spatiotemporal fusion approach},
+journal = {Remote Sensing of Environment},
+volume = {297},
+pages = {113784},
+year = {2023},
+doi = {https://doi.org/10.1016/j.rse.2023.113784},
+author = {Yi Yu and Luigi J. Renzullo and Tim R. McVicar and Brendan P. Malone and Siyuan Tian},
+}
 
 ## Conference talk
 
