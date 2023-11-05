@@ -83,6 +83,7 @@ The published link of this code is at [Zenodo](https://doi.org/10.5281/zenodo.80
 
 If you found this repository helpful, please kindly consider citing:
 
+```
 @article{YU2023113784,
 title = {Generating daily 100 m resolution land surface temperature estimates continentally using an unbiased spatiotemporal fusion approach},
 journal = {Remote Sensing of Environment},
@@ -92,6 +93,7 @@ year = {2023},
 doi = {https://doi.org/10.1016/j.rse.2023.113784},
 author = {Yi Yu and Luigi J. Renzullo and Tim R. McVicar and Brendan P. Malone and Siyuan Tian},
 }
+```
 
 ## Conference talk
 
