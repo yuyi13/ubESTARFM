@@ -13,6 +13,7 @@ library(stringr)
 library(foreach)
 library(doParallel)
 source('~/Workspace/RainfallSpectralAnalysis/SpectralAnalysis/function_SetupForGraphics.R')
+# more details here: https://github.com/LuigiJR/SpectralAnalysis
 
 site_df = read.csv('/g/data/os22/users/yu/lst_project/0_code/study_sites.csv')
 

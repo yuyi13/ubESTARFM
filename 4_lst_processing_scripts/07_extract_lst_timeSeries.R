@@ -22,9 +22,9 @@ foreach (i=1:12, .combine=cbind) %dopar% {
 	source('~/Workspace/RainfallSpectralAnalysis/SpectralAnalysis/function_SetupForGraphics.R')
 	
 	# paths to LST products
-	path2terra = paste0('/g/data/os22/users/yu/lst_project/0_terra_data/', site$sitename[i], '/') # terra lst
-	path2esfm = paste0('/scratch/os22/yy4778/lst_project/2_estarfm_output/', site$sitename[i], '/') # baseline
-	path2esfmbc = paste0('/scratch/os22/yy4778/lst_project/2_estarfm_output_bc/', site$sitename[i], '/') # bias corrected
+	path2terra = paste0('/datasets/work/d61-af-soilmoisture/work/lst_project/0_terra_data/', site$sitename[i], '/') # terra lst
+	path2esfm = paste0('/datasets/work/d61-af-soilmoisture/work/lst_project/2_estarfm_output/', site$sitename[i], '/') # baseline
+	path2esfmbc = paste0('/datasets/work/d61-af-soilmoisture/work/lst_project/2_estarfm_output_bc/', site$sitename[i], '/') # bias corrected
 	path2time = '/scratch/os22/yy4778/MODIS_data/LST_daytime_viewtime/' # terra time layer
 	flux_lst = read.csv(paste0('/g/data/os22/users/yu/lst_project/flux_data/', site$sitename[i], '_lst.csv'))
 
@@ -32,7 +32,9 @@ foreach (i=1:12, .combine=cbind) %dopar% {
 	roi = raster(extent(site$xmn[i], site$xmx[i], site$ymn[i], site$ymx[i]), res=0.01, crs=PROJ_LATLON)
 
 	# time range for evaluation
-	local_time = as.POSIXct(flux_lst$local_time, tz=site$timezone[i])
+	local_time = as.POSIXct(flux_lst$local_time, tz=site$timezone[i]) 
+	# in the raw evaluation, we consider the daylight saving time
+	# but in the future, we should always use local standard time; i.e., tz=site$standard_timezone[i]
 
 	# specify the output file
 	ofile = paste0('/g/data/os22/users/yu/lst_project/metrics/estarfm/', site$sitename[i], '_validation.csv')

@@ -35,6 +35,7 @@ registerDoParallel(cl)
 foreach (f = 1:12, .combine=cbind, .packages=c('stringr', 'ncdf4')) %dopar% {
 
     source('~/Workspace/RainfallSpectralAnalysis/SpectralAnalysis/function_SetupForGraphics.R')
+    # more details here: https://github.com/LuigiJR/SpectralAnalysis
 
     # get the region of interests
     roi = raster(extent(site$xmn[f], site$xmx[f], site$ymn[f], site$ymx[f]), res=0.001, crs=PROJ_LATLON)

@@ -3,6 +3,7 @@
 
 # packages
 source('~/Workspace/RainfallSpectralAnalysis/SpectralAnalysis/function_SetupForGraphics.R')
+# more details here: https://github.com/LuigiJR/SpectralAnalysis
 library(stringr)
 
 site_df = read.csv('/datasets/work/d61-af-soilmoisture/work/users/yu/code/study_sites.csv')

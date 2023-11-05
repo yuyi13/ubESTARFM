@@ -3,9 +3,6 @@
 # the tables indicated in this script are available from the paper
 # https://doi.org/10.1016/j.rse.2023.113784
 
-library(stringr)
-library(ggsci)
-
 ##############################################
 # table 4. pre evaluation of modis and landsat
 ##############################################
