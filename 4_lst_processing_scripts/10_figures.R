@@ -133,7 +133,7 @@ for (f in c(1,3)){
     max_val = 325
     min_val = 290
 
-    # Calperum; my initial sequence of sites are different from the paper
+    # Calperum; my initial sequence of sites are not alphabetically ordered
     if (f == 1){
 
         DOI = as.Date('2014-11-10')
@@ -172,7 +172,7 @@ for (f in c(1,3)){
         image(r2, col=TemperatureRamp(64), zlim=c(min_val, max_val), xaxt='n', yaxt='n', xlab = 'ubESTARFM', ylab = NA, cex.axis=1.5, cex.lab = 1.5)
         legend(ex[1] - 0.02, ex[4], '(h)', bty='n', cex=6)
 
-    # Samford; my initial sequence of sites are different from the paper
+    # Samford; my initial sequence of sites are not alphabetically ordered
     } else {
     
         DOI = as.Date('2016-11-29')
@@ -459,7 +459,7 @@ for (f in c(12,4)){
     max_val = 305
     min_val = 270
 
-    # Great Western Woodlands; my initial sequence of sites are different from the paper
+    # Great Western Woodlands; my initial sequence of sites are not alphabetically ordered
     if (f == 12){
 
         DOI = as.Date('2019-07-11')
@@ -498,7 +498,7 @@ for (f in c(12,4)){
         image(r2, col=TemperatureRamp(64), zlim=c(min_val, max_val), xaxt='n', yaxt='n', xlab = 'ubESTARFM', ylab = NA, cex.axis=1.5, cex.lab = 1.5)
         legend(ex[1] - 0.02, ex[4], '(h)', bty='n', cex=6)
 
-    # Tumbarumba; my initial sequence of sites are different from the paper
+    # Tumbarumba; my initial sequence of sites are not alphabetically ordered
     } else {
     
         DOI = as.Date('2020-09-10')

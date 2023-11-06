@@ -24,30 +24,30 @@ registerDoParallel(cl)
 # do it in parallel
 foreach (i=1:nrow(ozfluxLL), .combine=cbind, .packages=c('ncdf4', 'raster')) %dopar% {
 
-    sitename = ozfluxLL$sitename[i]
+	sitename = ozfluxLL$sitename[i]
 	print(paste0('start extracting value for site ', sitename))
 
 	ofile = paste0(outpath, sitename, '_lst.csv')
-    basic = data.frame(matrix(nrow=0,ncol=5))
+	basic = data.frame(matrix(nrow=0,ncol=5))
 	colnames(basic) = c('local_time', 'longwave_u', 'longwave_d', 'emis', 'lst')
-    write.table(basic,ofile,row.names=FALSE,sep=',',quote=FALSE)
+	write.table(basic,ofile,row.names=FALSE,sep=',',quote=FALSE)
 
 	# read netcdf files from ozflux server
-    x = nc_open(paste0('https://dap.ozflux.org.au/thredds/dodsC/ozflux/sites/',sitename,'/L3/default/',sitename,'_L3.nc'))
-    L_u = ncvar_get(x, 'Flu'); L_u[L_u == -9999] = NA
-    L_d = ncvar_get(x, 'Fld'); L_d[L_d == -9999] = NA
-    local_time = ncvar_get(x, 'time')
+	x = nc_open(paste0('https://dap.ozflux.org.au/thredds/dodsC/ozflux/sites/',sitename,'/L3/default/',sitename,'_L3.nc'))
+	L_u = ncvar_get(x, 'Flu'); L_u[L_u == -9999] = NA
+	L_d = ncvar_get(x, 'Fld'); L_d[L_d == -9999] = NA
+	local_time = ncvar_get(x, 'time')
 	nc_close(x)
 
 	# *******************************************
 	# this is the area where adjustments are made
 	# in RSE version, we considered the daylight saving time
 	# in the future, we should always use local standard time; i.e., tz=site$standard_timezone[i]
-    TZ = ozfluxLL$timezone[i]
+	TZ = ozfluxLL$timezone[i]
 
 	# in the RSE version, we did not explicitly claimed the 'second' timestep in the TOI (time of interests)
-    local_time = time_GMT = ISOdatetime(1800,1,1,0,0,0,tz=TZ) + local_time*3600*24
-    attr(time_GMT, 'tzone') = 'GMT'
+	local_time = time_GMT = ISOdatetime(1800,1,1,0,0,0,tz=TZ) + local_time*3600*24
+	attr(time_GMT, 'tzone') = 'GMT'
 	# *******************************************
 
 	for (k in 1:length(local_time)) {
