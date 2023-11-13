@@ -40,7 +40,7 @@ foreach (i=1:nrow(ozfluxLL), .combine=cbind, .packages=c('ncdf4', 'raster', 'lub
 	# in the updated version, we only consider the standard time
 	TZ = ozfluxLL$standard_timezone[i]
 
-	# in the updated version, we explicitly claim the 'second' timestep in the TOI (time of interests)
+	# in the updated version, we explicitly claim the 'seconds' timestep in the TOI (time of interests)
 	local_time = time_GMT = ISOdatetime(1800,1,1,0,0,0,tz=TZ) + seconds(local_time*3600*24)
 	attr(time_GMT, 'tzone') = 'GMT'
 	# *******************************************

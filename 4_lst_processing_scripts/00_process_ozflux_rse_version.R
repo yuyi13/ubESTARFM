@@ -45,7 +45,7 @@ foreach (i=1:nrow(ozfluxLL), .combine=cbind, .packages=c('ncdf4', 'raster')) %do
 	# in the future, we should always use local standard time; i.e., tz=site$standard_timezone[i]
 	TZ = ozfluxLL$timezone[i]
 
-	# in the RSE version, we did not explicitly claimed the 'second' timestep in the TOI (time of interests)
+	# in the RSE version, we did not explicitly claim the 'seconds' timestep in the TOI (time of interests)
 	local_time = time_GMT = ISOdatetime(1800,1,1,0,0,0,tz=TZ) + local_time*3600*24
 	attr(time_GMT, 'tzone') = 'GMT'
 	# *******************************************
