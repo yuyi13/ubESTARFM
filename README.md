@@ -25,7 +25,7 @@ This is the repository for the ubESTARFM algorithm, which was described in detai
 
 Fine spatial resolution land surface temperature (LST) data are crucial to study heterogeneous landscapes (e.g., agricultural and urban). Some well-known spatiotemporal fusion methods like the Spatial and Temporal Adaptive Reflectance Fusion Model (STARFM; Gao et al., 2006) and the Enhanced STARFM (ESTARFM; Zhu et al., 2010), which were originally developed to fuse surface reflectance data, may not be suitable for direct application in LST studies due to the high sub-diurnal dynamics of LST. To address this, we proposed a variant of ESTARFM, referred to as the unbiased ESTARFM (ubESTARFM), specifically designed to accommodate the high temporal dynamics of LST to generate fine-resolution LST estimates. 
 
-In ubESTARFM, we implement a local bias correction on the central pixel and similar fine-resolution pixels within the moving window using the mean value of corresponding coarse-resolution pixels as reference. By applying this linear scaling approach, we can scale the systematic biases of the fine-resolution data to a same level of the corresponding coarse resolution data in each moving window, while maintaining the variation and spatial details of fine resolution data.
+In ubESTARFM, we implement a local bias correction on the central pixel and similar fine-resolution pixels within the moving window using the mean value of corresponding coarse-resolution pixels as reference. By applying this linear scaling approach, we can scale the systematic biases of the fine-resolution data to a same level of the corresponding coarse-resolution data in each moving window, while maintaining the variation and spatial details of fine-resolution data.
 
 ![](figures/local-bias-correction.png)
 
@@ -69,13 +69,13 @@ The scripts for processing, fusing and evaluating satellite LST are archived in 
 
 ### IMPORTANT NOTE for *in-situ* LST from OzFlux
 
-We have found an alternative strategy in processing *in-situ* LST, which does not consider the daylight saving time and does expilctly claim the 'seconds' timestep in the TOI (Time of Interests). Compared to the strategy used in our RSE paper (i.e., `4_lst_processing_scripts/00_process_ozflux_rse_version.R`), this strategy is expected to better coincide with the satellite overpass time. Please refer to the script `4_lst_processing_scripts/00_process_ozflux_updated.R` for more details.
+We have found an alternative strategy in processing *in-situ* LST, which does not consider the daylight saving time and does explicitly claim the 'seconds' timestep in the TOI (Time of Interests). Compared to the strategy used in our RSE paper (i.e., `4_lst_processing_scripts/00_process_ozflux_rse_version.R`), this strategy is expected to better coincide with the satellite overpass time. Please refer to the script `4_lst_processing_scripts/00_process_ozflux_updated.R` for more details.
 
 All the updated OzFlux LST data are available at `5_ozflux_lst/`.
 
 ## Permalink
 
-If you are interested in having a comprehensive assessment of ubESTARFM, please refer to the dataset published in the [CSIRO Data Access Portal](https://doi.org/10.25919/b77m-8n31), which contains the full set of data (12 OzFlux sites across Australia for the period of 2013-2021) used in our RSE paper.
+If you are interested in having a comprehensive assessment of ubESTARFM, please refer to the dataset published in the [CSIRO Data Access Portal](https://doi.org/10.25919/rrpg-m948), which contains the full set of data (12 OzFlux sites across Australia for the period of 2013-2021) used in our RSE paper.
 
 The published link of this code is at [Zenodo](https://doi.org/10.5281/zenodo.8017282). You can also find a lite version at [ResearchGate](https://www.researchgate.net/publication/371376456_Unbiased_ESTARFM_ubESTARFM).
 
