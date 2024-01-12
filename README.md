@@ -85,13 +85,14 @@ If you found this repository helpful, please kindly consider citing:
 
 ```
 @article{YU2023113784,
+author = {Yi Yu and Luigi J. Renzullo and Tim R. McVicar and Brendan P. Malone and Siyuan Tian},
 title = {Generating daily 100 m resolution land surface temperature estimates continentally using an unbiased spatiotemporal fusion approach},
 journal = {Remote Sensing of Environment},
 volume = {297},
 pages = {113784},
 year = {2023},
 doi = {https://doi.org/10.1016/j.rse.2023.113784},
-author = {Yi Yu and Luigi J. Renzullo and Tim R. McVicar and Brendan P. Malone and Siyuan Tian},
+url = {https://www.sciencedirect.com/science/article/pii/S0034425723003358}
 }
 ```
 
