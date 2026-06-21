@@ -1,9 +1,11 @@
 # Unbiased ESTARFM
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE.md)
-[![R](https://img.shields.io/badge/R-4.3%2B-276DC3.svg)](https://www.r-project.org/)
-[![Python](https://img.shields.io/badge/Python-3.12%2B-3776AB.svg)](https://www.python.org/)
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.8017282.svg)](https://doi.org/10.5281/zenodo.8017282)
+[![R 4.3+](https://img.shields.io/badge/R-4.3%2B-276DC3?style=flat&logo=R&logoColor=white)](https://www.r-project.org/)
+[![Python 3.12+](https://img.shields.io/badge/Python-3.12%2B-3776AB?style=flat&logo=Python&logoColor=white)](https://www.python.org/)
+[![Zenodo](https://img.shields.io/badge/Zenodo-10.5281%2Fzenodo.8017282-1682D4?style=flat)](https://doi.org/10.5281/zenodo.8017282)
+[![Article](https://img.shields.io/badge/Article-Remote%20Sensing%20of%20Environment-0A70A3?style=flat)](https://doi.org/10.1016/j.rse.2023.113784)
+[![Dataset](https://img.shields.io/badge/Dataset-CSIRO%20Data%20Access%20Portal-00A9CE?style=flat)](https://doi.org/10.25919/rrpg-m948)
 
 ubESTARFM generates fine-resolution land surface temperature estimates from two
 fine/coarse reference pairs and a coarse target raster. It applies the local
