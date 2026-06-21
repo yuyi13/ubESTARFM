@@ -1,6 +1,6 @@
 # README Integration Design
 
-**Date:** 2026-06-21  
+**Date:** 2026-06-21
 **Status:** Approved
 
 ## Purpose

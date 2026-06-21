@@ -579,4 +579,3 @@ Expected:
 - `git diff --check` produces no output.
 - The diff contains the approved specification, this plan, and `README.md`.
 - The worktree is clean on `docs/readme-refresh`.
-
