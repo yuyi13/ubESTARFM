@@ -1,0 +1,8 @@
+^python$
+^legacy$
+^benchmarks$
+^docs/superpowers$
+^\.github$
+^.*\.Rproj$
+^\.Rproj\.user$
+^ubESTARFM_.*\.tar\.gz$

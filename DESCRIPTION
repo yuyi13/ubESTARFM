@@ -1,0 +1,22 @@
+Package: ubESTARFM
+Type: Package
+Title: Unbiased Enhanced Spatial and Temporal Adaptive Reflectance Fusion
+Version: 3.0.0.9000
+Authors@R: person("Yi", "Yu", email = "yi.yu1@anu.edu.au", role = c("aut", "cre"))
+Description: Trains reusable reference-pair models and predicts fine-resolution
+    land surface temperature using the unbiased ESTARFM algorithm.
+License: MIT + file LICENSE
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.3
+Depends: R (>= 4.3.0)
+Imports:
+    methods,
+    Rcpp (>= 1.1.1),
+    terra (>= 1.9.0)
+LinkingTo:
+    Rcpp
+Suggests:
+    testthat (>= 3.2.0)
+Config/testthat/edition: 3
+SystemRequirements: C++17
