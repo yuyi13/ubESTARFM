@@ -44,10 +44,37 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
+// ubestarfm_predict_patch_cpp
+Rcpp::NumericMatrix ubestarfm_predict_patch_cpp(const Rcpp::NumericMatrix& fine_1, const Rcpp::NumericMatrix& fine_2, const Rcpp::NumericMatrix& coarse_1, const Rcpp::NumericMatrix& coarse_2, const Rcpp::RawVector& candidate_masks, int mask_bytes, const Rcpp::NumericVector& targets, int target_count, int row_start, int row_end, int col_start, int col_end, int window_radius, std::string method, double value_min, double value_max);
+RcppExport SEXP _ubESTARFM_ubestarfm_predict_patch_cpp(SEXP fine_1SEXP, SEXP fine_2SEXP, SEXP coarse_1SEXP, SEXP coarse_2SEXP, SEXP candidate_masksSEXP, SEXP mask_bytesSEXP, SEXP targetsSEXP, SEXP target_countSEXP, SEXP row_startSEXP, SEXP row_endSEXP, SEXP col_startSEXP, SEXP col_endSEXP, SEXP window_radiusSEXP, SEXP methodSEXP, SEXP value_minSEXP, SEXP value_maxSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< const Rcpp::NumericMatrix& >::type fine_1(fine_1SEXP);
+    Rcpp::traits::input_parameter< const Rcpp::NumericMatrix& >::type fine_2(fine_2SEXP);
+    Rcpp::traits::input_parameter< const Rcpp::NumericMatrix& >::type coarse_1(coarse_1SEXP);
+    Rcpp::traits::input_parameter< const Rcpp::NumericMatrix& >::type coarse_2(coarse_2SEXP);
+    Rcpp::traits::input_parameter< const Rcpp::RawVector& >::type candidate_masks(candidate_masksSEXP);
+    Rcpp::traits::input_parameter< int >::type mask_bytes(mask_bytesSEXP);
+    Rcpp::traits::input_parameter< const Rcpp::NumericVector& >::type targets(targetsSEXP);
+    Rcpp::traits::input_parameter< int >::type target_count(target_countSEXP);
+    Rcpp::traits::input_parameter< int >::type row_start(row_startSEXP);
+    Rcpp::traits::input_parameter< int >::type row_end(row_endSEXP);
+    Rcpp::traits::input_parameter< int >::type col_start(col_startSEXP);
+    Rcpp::traits::input_parameter< int >::type col_end(col_endSEXP);
+    Rcpp::traits::input_parameter< int >::type window_radius(window_radiusSEXP);
+    Rcpp::traits::input_parameter< std::string >::type method(methodSEXP);
+    Rcpp::traits::input_parameter< double >::type value_min(value_minSEXP);
+    Rcpp::traits::input_parameter< double >::type value_max(value_maxSEXP);
+    rcpp_result_gen = Rcpp::wrap(ubestarfm_predict_patch_cpp(fine_1, fine_2, coarse_1, coarse_2, candidate_masks, mask_bytes, targets, target_count, row_start, row_end, col_start, col_end, window_radius, method, value_min, value_max));
+    return rcpp_result_gen;
+END_RCPP
+}
 
 static const R_CallMethodDef CallEntries[] = {
     {"_ubESTARFM_ubestarfm_train_patch_cpp", (DL_FUNC) &_ubESTARFM_ubestarfm_train_patch_cpp, 11},
     {"_ubESTARFM_ubestarfm_assemble_masks_cpp", (DL_FUNC) &_ubESTARFM_ubestarfm_assemble_masks_cpp, 3},
+    {"_ubESTARFM_ubestarfm_predict_patch_cpp", (DL_FUNC) &_ubESTARFM_ubestarfm_predict_patch_cpp, 16},
     {NULL, NULL, 0}
 };
 

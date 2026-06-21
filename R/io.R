@@ -81,7 +81,8 @@ ubestarfm_matrix_to_raster <- function(values, template) {
   if (!is.matrix(values)) {
     stop("values must be a matrix.", call. = FALSE)
   }
-  if (!identical(dim(values), c(terra::nrow(template), terra::ncol(template)))) {
+  expected_dimensions <- c(terra::nrow(template), terra::ncol(template))
+  if (!all(dim(values) == expected_dimensions)) {
     stop("Matrix dimensions must match the raster template.", call. = FALSE)
   }
 

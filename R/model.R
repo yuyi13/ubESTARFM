@@ -96,3 +96,29 @@ ubestarfm_validate_model <- function(model) {
 
   invisible(model)
 }
+
+#' Save a reusable ubESTARFM model
+#'
+#' @param model A reusable `ubestarfm_model`.
+#' @param path Destination RDS path.
+#' @param compress Compression passed to [saveRDS()].
+#'
+#' @return The normalized output path, invisibly.
+#' @export
+ubestarfm_save_model <- function(model, path, compress = TRUE) {
+  ubestarfm_validate_model(model)
+  saveRDS(model, path, compress = compress)
+  invisible(normalizePath(path, mustWork = TRUE))
+}
+
+#' Load a reusable ubESTARFM model
+#'
+#' @param path An RDS model path.
+#'
+#' @return A validated `ubestarfm_model`.
+#' @export
+ubestarfm_load_model <- function(path) {
+  model <- readRDS(path)
+  ubestarfm_validate_model(model)
+  model
+}

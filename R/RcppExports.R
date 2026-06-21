@@ -9,3 +9,7 @@ ubestarfm_assemble_masks_cpp <- function(patch_results, total_cells, mask_bytes)
     .Call(`_ubESTARFM_ubestarfm_assemble_masks_cpp`, patch_results, total_cells, mask_bytes)
 }
 
+ubestarfm_predict_patch_cpp <- function(fine_1, fine_2, coarse_1, coarse_2, candidate_masks, mask_bytes, targets, target_count, row_start, row_end, col_start, col_end, window_radius, method, value_min, value_max) {
+    .Call(`_ubESTARFM_ubestarfm_predict_patch_cpp`, fine_1, fine_2, coarse_1, coarse_2, candidate_masks, mask_bytes, targets, target_count, row_start, row_end, col_start, col_end, window_radius, method, value_min, value_max)
+}
+
