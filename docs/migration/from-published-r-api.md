@@ -1,5 +1,23 @@
 # Migrating from the published R API
 
+The maintained R package is named `ubestarfm`. Replace
+`library(ubESTARFM)` with:
+
+```r
+library(ubestarfm)
+```
+
+If the earlier development package is installed, remove it in a clean R
+session before installing the lowercase package:
+
+```r
+remove.packages("ubESTARFM")
+install.packages("remotes")
+remotes::install_github("yuyi13/ubESTARFM")
+```
+
+The published compatibility function remains `ubESTARFM()`.
+
 The published `ubESTARFM()` function remains available. It now delegates to the
 maintained train/predict API:
 

@@ -1,16 +1,19 @@
 # R: single and batch prediction
 
-Install the package from the repository root:
+Install directly from GitHub:
 
-```bash
-Rscript -e 'install.packages(c("terra", "Rcpp"))'
-R CMD INSTALL .
+```r
+install.packages("remotes")
+remotes::install_github("yuyi13/ubESTARFM")
+library(ubestarfm)
 ```
+
+For development from a local clone, run `R CMD INSTALL .`.
 
 Train the two reference dates once:
 
 ```r
-library(ubESTARFM)
+library(ubestarfm)
 
 model <- ubestarfm_train(
   fine_1 = "inst/extdata/Landsat_LST_cloudrm_20160205.tif",

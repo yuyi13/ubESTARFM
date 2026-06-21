@@ -9,7 +9,7 @@ Run R verification:
 Rscript -e 'Rcpp::compileAttributes(".")'
 Rscript -e 'roxygen2::roxygenise(".")'
 R CMD build .
-R CMD check --no-manual ubESTARFM_3.0.0.9000.tar.gz
+R CMD check --no-manual ubestarfm_3.0.0.9000.tar.gz
 ```
 
 Run Python and cross-language verification:

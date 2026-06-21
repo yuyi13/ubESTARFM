@@ -88,10 +88,22 @@ for the complete old-to-new path mapping.
 
 ## Installation
 
-Install the R package from the repository root:
+Install the R package directly from GitHub:
+
+```r
+install.packages("remotes")
+remotes::install_github("yuyi13/ubESTARFM")
+library(ubestarfm)
+```
+
+The R package contains compiled C++ code. Installation from source therefore
+requires an R build toolchain, such as
+[Rtools](https://cran.r-project.org/bin/windows/Rtools/) on Windows or the
+Command Line Tools for Xcode on macOS.
+
+For development from a local clone:
 
 ```bash
-Rscript -e 'install.packages(c("terra", "Rcpp"))'
 R CMD INSTALL .
 ```
 
@@ -116,7 +128,7 @@ dates are 5 February 2016 and 8 March 2016; the bundled target date is
 R:
 
 ```r
-library(ubESTARFM)
+library(ubestarfm)
 
 model <- ubestarfm_train(
   fine_1 = "inst/extdata/Landsat_LST_cloudrm_20160205.tif",

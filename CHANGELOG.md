@@ -11,3 +11,5 @@
 - Replaced numbered repository directories with descriptive paths.
 - Corrected target-date missing-value handling by filtering candidates and
   renormalizing weights during prediction.
+- Standardized the maintained R package identity as lowercase `ubestarfm`
+  while retaining the published `ubESTARFM()` compatibility function.

@@ -12,4 +12,4 @@
 ^\.ruff_cache$
 ^.*\.Rproj$
 ^\.Rproj\.user$
-^ubESTARFM_.*\.tar\.gz$
+^ubestarfm_.*\.tar\.gz$

@@ -29,6 +29,8 @@ def test_r_workflow_covers_package_and_archive() -> None:
     text = (WORKFLOWS / "r-check.yaml").read_text()
     assert "r-version: release" in text
     assert "R CMD check" in text
+    assert "ubestarfm_*.tar.gz" in text
+    assert "ubESTARFM_*.tar.gz" not in text
     assert "sha256sum -c" in text
     assert "list.files(\"legacy\"" in text
 

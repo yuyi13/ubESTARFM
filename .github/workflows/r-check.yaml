@@ -32,4 +32,4 @@ jobs:
       - name: R CMD check
         run: |
           R CMD build .
-          R CMD check --no-manual ubESTARFM_*.tar.gz
+          R CMD check --no-manual ubestarfm_*.tar.gz
