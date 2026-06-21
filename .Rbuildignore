@@ -1,8 +1,14 @@
 ^python$
 ^legacy$
+^data$
 ^benchmarks$
-^docs/superpowers$
+^docs$
+^examples$
+^figures$
+^tests/layout$
 ^\.github$
+^\.git$
+^\.pytest_cache$
 ^.*\.Rproj$
 ^\.Rproj\.user$
 ^ubESTARFM_.*\.tar\.gz$

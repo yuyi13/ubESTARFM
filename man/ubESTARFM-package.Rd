@@ -2,7 +2,6 @@
 % Please edit documentation in R/package.R
 \docType{package}
 \name{ubESTARFM-package}
-\alias{ubESTARFM}
 \alias{ubESTARFM-package}
 \title{ubESTARFM package}
 \description{

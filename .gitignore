@@ -1,7 +1,10 @@
 .Rcheck/
+*.Rcheck/
+*.tar.gz
 .Rhistory
 .Rproj.user/
 *.Rproj
+.pytest_cache/
 src/*.o
 src/*.so
 src/*.dll
