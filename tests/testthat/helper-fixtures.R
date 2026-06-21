@@ -34,3 +34,21 @@ small_reference_fixture <- function() {
     coarse_2 = coarse_2
   )
 }
+
+train_example_model <- function(
+  window_radius = 25L,
+  patch_size = 200L,
+  method = "zero_bias",
+  workers = 1L
+) {
+  ubestarfm_train(
+    fine_1 = example_path("Landsat_LST_cloudrm_20160205.tif"),
+    fine_2 = example_path("Landsat_LST_cloudrm_20160308.tif"),
+    coarse_1 = example_path("MOD11A1_LST_cloudrm_20160205.tif"),
+    coarse_2 = example_path("MOD11A1_LST_cloudrm_20160308.tif"),
+    window_radius = window_radius,
+    patch_size = patch_size,
+    method = method,
+    workers = workers
+  )
+}
