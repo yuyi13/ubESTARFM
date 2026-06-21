@@ -210,9 +210,9 @@ ubestarfm_predict_batch <- function(
       )
     }
   )
-  template <- ubestarfm_template_from_model(model)
+  model_template <- ubestarfm_template_from_model(model)
   ubestarfm_validate_geometry(c(
-    list(template),
+    list(model_template),
     lapply(inputs, `[[`, "raster")
   ))
 
@@ -225,10 +225,10 @@ ubestarfm_predict_batch <- function(
     value_range = value_range,
     workers = workers
   )
-  predictions <- lapply(
-    matrices,
+  predictions <- Map(
     ubestarfm_matrix_to_raster,
-    template = template
+    matrices,
+    lapply(inputs, `[[`, "raster")
   )
 
   if (!is.null(output_paths)) {
