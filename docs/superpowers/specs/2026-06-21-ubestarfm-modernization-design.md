@@ -1,7 +1,7 @@
 # ubESTARFM Modernization Design
 
 **Date:** 2026-06-21  
-**Status:** Pending written-spec review  
+**Status:** Approved  
 **Scientific reference:** `legacy/ubESTARFM.R`, moved without content changes from the published `0_algorithm/ubESTARFM.R`
 
 ## 1. Purpose
