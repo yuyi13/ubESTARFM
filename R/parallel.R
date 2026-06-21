@@ -5,7 +5,7 @@
 # Last updated: 2026-06-21
 # Inputs: Work items, a worker function, and a worker count.
 # Outputs: Ordered lists of patch results.
-# Usage: Internal package module; loaded through the ubESTARFM namespace.
+# Usage: Internal package module; loaded through the ubestarfm namespace.
 # Dependencies: Base R parallel package.
 
 ubestarfm_lapply <- function(x, fun, workers = 1L) {
@@ -33,6 +33,6 @@ ubestarfm_lapply <- function(x, fun, workers = 1L) {
 
   cluster <- parallel::makeCluster(min(workers, length(x)))
   on.exit(parallel::stopCluster(cluster), add = TRUE)
-  parallel::clusterEvalQ(cluster, library(ubESTARFM))
+  parallel::clusterEvalQ(cluster, library(ubestarfm))
   parallel::parLapply(cluster, x, fun)
 }

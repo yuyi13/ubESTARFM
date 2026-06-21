@@ -12,7 +12,7 @@ Rcpp::Rostream<false>& Rcpp::Rcerr = Rcpp::Rcpp_cerr_get();
 
 // ubestarfm_train_patch_cpp
 Rcpp::List ubestarfm_train_patch_cpp(const Rcpp::NumericMatrix& fine_1, const Rcpp::NumericMatrix& fine_2, const Rcpp::NumericMatrix& coarse_1, const Rcpp::NumericMatrix& coarse_2, int row_start, int row_end, int col_start, int col_end, int window_radius, double threshold_1, double threshold_2);
-RcppExport SEXP _ubESTARFM_ubestarfm_train_patch_cpp(SEXP fine_1SEXP, SEXP fine_2SEXP, SEXP coarse_1SEXP, SEXP coarse_2SEXP, SEXP row_startSEXP, SEXP row_endSEXP, SEXP col_startSEXP, SEXP col_endSEXP, SEXP window_radiusSEXP, SEXP threshold_1SEXP, SEXP threshold_2SEXP) {
+RcppExport SEXP _ubestarfm_ubestarfm_train_patch_cpp(SEXP fine_1SEXP, SEXP fine_2SEXP, SEXP coarse_1SEXP, SEXP coarse_2SEXP, SEXP row_startSEXP, SEXP row_endSEXP, SEXP col_startSEXP, SEXP col_endSEXP, SEXP window_radiusSEXP, SEXP threshold_1SEXP, SEXP threshold_2SEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -33,7 +33,7 @@ END_RCPP
 }
 // ubestarfm_assemble_masks_cpp
 Rcpp::RawVector ubestarfm_assemble_masks_cpp(const Rcpp::List& patch_results, int total_cells, int mask_bytes);
-RcppExport SEXP _ubESTARFM_ubestarfm_assemble_masks_cpp(SEXP patch_resultsSEXP, SEXP total_cellsSEXP, SEXP mask_bytesSEXP) {
+RcppExport SEXP _ubestarfm_ubestarfm_assemble_masks_cpp(SEXP patch_resultsSEXP, SEXP total_cellsSEXP, SEXP mask_bytesSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -46,7 +46,7 @@ END_RCPP
 }
 // ubestarfm_predict_patch_cpp
 Rcpp::NumericMatrix ubestarfm_predict_patch_cpp(const Rcpp::NumericMatrix& fine_1, const Rcpp::NumericMatrix& fine_2, const Rcpp::NumericMatrix& coarse_1, const Rcpp::NumericMatrix& coarse_2, const Rcpp::RawVector& candidate_masks, int mask_bytes, const Rcpp::NumericVector& targets, int target_count, int row_start, int row_end, int col_start, int col_end, int window_radius, std::string method, double value_min, double value_max);
-RcppExport SEXP _ubESTARFM_ubestarfm_predict_patch_cpp(SEXP fine_1SEXP, SEXP fine_2SEXP, SEXP coarse_1SEXP, SEXP coarse_2SEXP, SEXP candidate_masksSEXP, SEXP mask_bytesSEXP, SEXP targetsSEXP, SEXP target_countSEXP, SEXP row_startSEXP, SEXP row_endSEXP, SEXP col_startSEXP, SEXP col_endSEXP, SEXP window_radiusSEXP, SEXP methodSEXP, SEXP value_minSEXP, SEXP value_maxSEXP) {
+RcppExport SEXP _ubestarfm_ubestarfm_predict_patch_cpp(SEXP fine_1SEXP, SEXP fine_2SEXP, SEXP coarse_1SEXP, SEXP coarse_2SEXP, SEXP candidate_masksSEXP, SEXP mask_bytesSEXP, SEXP targetsSEXP, SEXP target_countSEXP, SEXP row_startSEXP, SEXP row_endSEXP, SEXP col_startSEXP, SEXP col_endSEXP, SEXP window_radiusSEXP, SEXP methodSEXP, SEXP value_minSEXP, SEXP value_maxSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -72,13 +72,13 @@ END_RCPP
 }
 
 static const R_CallMethodDef CallEntries[] = {
-    {"_ubESTARFM_ubestarfm_train_patch_cpp", (DL_FUNC) &_ubESTARFM_ubestarfm_train_patch_cpp, 11},
-    {"_ubESTARFM_ubestarfm_assemble_masks_cpp", (DL_FUNC) &_ubESTARFM_ubestarfm_assemble_masks_cpp, 3},
-    {"_ubESTARFM_ubestarfm_predict_patch_cpp", (DL_FUNC) &_ubESTARFM_ubestarfm_predict_patch_cpp, 16},
+    {"_ubestarfm_ubestarfm_train_patch_cpp", (DL_FUNC) &_ubestarfm_ubestarfm_train_patch_cpp, 11},
+    {"_ubestarfm_ubestarfm_assemble_masks_cpp", (DL_FUNC) &_ubestarfm_ubestarfm_assemble_masks_cpp, 3},
+    {"_ubestarfm_ubestarfm_predict_patch_cpp", (DL_FUNC) &_ubestarfm_ubestarfm_predict_patch_cpp, 16},
     {NULL, NULL, 0}
 };
 
-RcppExport void R_init_ubESTARFM(DllInfo *dll) {
+RcppExport void R_init_ubestarfm(DllInfo *dll) {
     R_registerRoutines(dll, NULL, CallEntries, NULL, NULL);
     R_useDynamicSymbols(dll, FALSE);
 }

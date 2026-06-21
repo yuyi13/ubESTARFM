@@ -5,7 +5,7 @@
 # Last updated: 2026-06-21
 # Inputs: Reference arrays, candidate masks, spatial metadata, and parameters.
 # Outputs: Validated objects of class ubestarfm_model.
-# Usage: Internal package module; loaded through the ubESTARFM namespace.
+# Usage: Internal package module; loaded through the ubestarfm namespace.
 # Dependencies: Base R and utils.
 
 new_ubestarfm_model <- function(
@@ -21,7 +21,7 @@ new_ubestarfm_model <- function(
   structure(
     list(
       schema_version    = 1L,
-      package_version   = as.character(utils::packageVersion("ubESTARFM")),
+      package_version   = as.character(utils::packageVersion("ubestarfm")),
       reference_values  = reference_values,
       reference_valid   = reference_valid,
       candidate_masks   = candidate_masks,

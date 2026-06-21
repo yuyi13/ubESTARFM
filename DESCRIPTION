@@ -1,4 +1,4 @@
-Package: ubESTARFM
+Package: ubestarfm
 Type: Package
 Title: Unbiased Enhanced Spatial and Temporal Adaptive Reflectance Fusion
 Version: 3.0.0.9000
@@ -6,6 +6,8 @@ Authors@R: person("Yi", "Yu", email = "yi.yu1@anu.edu.au", role = c("aut", "cre"
 Description: Trains reusable reference-pair models and predicts fine-resolution
     land surface temperature using the unbiased ESTARFM algorithm.
 License: MIT + file LICENSE
+URL: https://github.com/yuyi13/ubESTARFM
+BugReports: https://github.com/yuyi13/ubESTARFM/issues
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.3
