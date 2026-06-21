@@ -9,25 +9,27 @@
 
 ## Contents
 
-- [Overview](#overview)
-- [Background](#background)
-- [Repository structure](#repository-structure)
-- [Installation](#installation)
-- [Demo and usage](#demo-and-usage)
-  - [Train once](#train-once)
-  - [Predict one target](#predict-one-target)
-  - [Predict a batch](#predict-a-batch)
-  - [Run the maintained examples](#run-the-maintained-examples)
-  - [Demonstration result](#demonstration-result)
-- [Model caching and performance](#model-caching-and-performance)
-- [Published R compatibility](#published-r-compatibility)
-- [LST processing scripts](#lst-processing-scripts)
-  - [Important note for in-situ LST from OzFlux](#important-note-for-in-situ-lst-from-ozflux)
-- [Data and permalinks](#data-and-permalinks)
-- [Documentation](#documentation)
-- [Citation](#citation)
-- [Conference talk](#conference-talk)
-- [References](#references)
+- [Unbiased ESTARFM (ubESTARFM) in R and Python](#unbiased-estarfm-ubestarfm-in-r-and-python)
+  - [Contents](#contents)
+  - [Overview](#overview)
+  - [Background](#background)
+  - [Repository structure](#repository-structure)
+  - [Installation](#installation)
+  - [Demo and usage](#demo-and-usage)
+    - [Train once](#train-once)
+    - [Predict one target](#predict-one-target)
+    - [Predict a batch](#predict-a-batch)
+    - [Run the maintained examples](#run-the-maintained-examples)
+    - [Demonstration result](#demonstration-result)
+  - [Model caching and performance](#model-caching-and-performance)
+  - [Published R compatibility](#published-r-compatibility)
+  - [LST processing scripts](#lst-processing-scripts)
+    - [Important note for in-situ LST from OzFlux](#important-note-for-in-situ-lst-from-ozflux)
+  - [Data and permalinks](#data-and-permalinks)
+  - [Documentation](#documentation)
+  - [Citation](#citation)
+  - [Conference talk](#conference-talk)
+  - [References](#references)
 
 ## Overview
 
@@ -335,22 +337,15 @@ available on
 
 If this repository or algorithm supports your work, please cite:
 
-Yu, Y., Renzullo, L. J., McVicar, T. R., Malone, B. P., and Tian, S. (2023).
-Generating daily 100 m resolution land surface temperature estimates
-continentally using an unbiased spatiotemporal fusion approach.
-*Remote Sensing of Environment*, 297, 113784.
-https://doi.org/10.1016/j.rse.2023.113784
-
 ```bibtex
-@article{YU2023113784,
+@article{yu_generating_2023,
   author  = {Yi Yu and Luigi J. Renzullo and Tim R. McVicar and Brendan P. Malone and Siyuan Tian},
   title   = {Generating daily 100 m resolution land surface temperature estimates continentally using an unbiased spatiotemporal fusion approach},
   journal = {Remote Sensing of Environment},
   volume  = {297},
   pages   = {113784},
   year    = {2023},
-  doi     = {10.1016/j.rse.2023.113784},
-  url     = {https://www.sciencedirect.com/science/article/pii/S0034425723003358}
+  doi     = {10.1016/j.rse.2023.113784}
 }
 ```
 
