@@ -1,107 +1,93 @@
-# Unbiased ESTARFM (ubESTARFM) in R
+# Unbiased ESTARFM
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![R Programming](https://img.shields.io/badge/-R%20Programming-3776AB?style=flat&logo=R&logoColor=white)](https://www.r-project.org/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE.md)
+[![R](https://img.shields.io/badge/R-4.3%2B-276DC3.svg)](https://www.r-project.org/)
+[![Python](https://img.shields.io/badge/Python-3.12%2B-3776AB.svg)](https://www.python.org/)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.8017282.svg)](https://doi.org/10.5281/zenodo.8017282)
-[![Twitter Follow](https://img.shields.io/twitter/follow/yy_nash13?style=social)](https://twitter.com/yy_nash13)
 
-## Contents
+ubESTARFM generates fine-resolution land surface temperature estimates from two
+fine/coarse reference pairs and a coarse target raster. It applies the local
+bias correction described by Yu et al. (2023).
 
-- [Overview](#overview)
-- [Background](#background)
-- [Usage](#usage)
-- [LST processing scripts](#lst-processing-scripts)
-    - [IMPORTANT NOTE for *in-situ* LST from OzFlux](#important-note-for-in-situ-lst-from-ozflux)
-- [Permalink](#permalink)
-- [To cite ubESTARFM](#to-cite-ubestarfm)
-- [Conference talk](#conference-talk)
-- [References](#references)
+The maintained implementation trains reference-pair candidate relationships
+once and reuses them for any number of target dates. The published R
+implementation is preserved unchanged in
+[`legacy/ubESTARFM.R`](legacy/ubESTARFM.R).
 
-## Overview
+## R quick start
 
-This is the repository for the ubESTARFM algorithm, which was described in detail in [Yu et al. (2023)](https://doi.org/10.1016/j.rse.2023.113784). Apart from the [algorithm](#usage), we also provided the [scripts about how we processed and evaluated the LST data](#lst-processing-scripts) herein.
+```r
+install.packages(c("terra", "Rcpp"))
+install.packages(".", repos = NULL, type = "source")
 
-## Background
+library(ubESTARFM)
 
-Fine spatial resolution land surface temperature (LST) data are crucial to study heterogeneous landscapes (e.g., agricultural and urban). Some well-known spatiotemporal fusion methods like the Spatial and Temporal Adaptive Reflectance Fusion Model (STARFM; Gao et al., 2006) and the Enhanced STARFM (ESTARFM; Zhu et al., 2010), which were originally developed to fuse surface reflectance data, may not be suitable for direct application in LST studies due to the high sub-diurnal dynamics of LST. To address this, we proposed a variant of ESTARFM, referred to as the unbiased ESTARFM (ubESTARFM), specifically designed to accommodate the high temporal dynamics of LST to generate fine-resolution LST estimates. 
+model <- ubestarfm_train(
+  "inst/extdata/Landsat_LST_cloudrm_20160205.tif",
+  "inst/extdata/Landsat_LST_cloudrm_20160308.tif",
+  "inst/extdata/MOD11A1_LST_cloudrm_20160205.tif",
+  "inst/extdata/MOD11A1_LST_cloudrm_20160308.tif",
+  workers = 4L
+)
 
-In ubESTARFM, we implement a local bias correction on the central pixel and similar fine-resolution pixels within the moving window using the mean value of corresponding coarse-resolution pixels as reference. By applying this linear scaling approach, we can scale the systematic biases of the fine-resolution data to a same level of the corresponding coarse-resolution data in each moving window, while maintaining the variation and spatial details of fine-resolution data.
-
-![](figures/local-bias-correction.png)
-
-## Usage
-
-The ubESTARFM algorithm is written in R. We recommend users to use a multi-core processor that can allow ubESTARFM to run in parallel and to be more efficient.
-
-Please install essential R packages before running ubESTARFM. 
-
-```
-install.packages('raster')
-install.packages('foreach')
-install.packages('doParallel')
+prediction <- ubestarfm_predict(
+  model,
+  "inst/extdata/MOD11A1_LST_cloudrm_20160218.tif"
+)
 ```
 
-To see an example of ubESTARFM, **please make sure you are under the directory** `ubESTARFM/`, then simply run the following via the command line:
+## Python quick start
 
-```
-Rscript 0_algorithm/example.R
-```
-
-This will run ubESTARFM on a small subset of data (Yanco site) using 4 cores and generate a `fused_result.tif` in the directory `3_output/`.
-
-Have a look at the result:
-
-```
-Rscript 0_algorithm/visualise.R
+```bash
+uv pip install ./python
 ```
 
-This will generate a `visualisation.png` in output that looks like:
+```python
+from ubestarfm import predict, train
 
-![](3_output/visualisation.png)
-
-Please note the data included in this repository are for demonstration purposes only.
-
-## LST processing scripts
-
-The scripts for processing, fusing and evaluating satellite LST are archived in `4_lst_processing_scripts/` for **reference purposes only**. The scripts are ordered in sequence 00-10, which follows the experimental design as below. However, it is unlikely you can run the scripts directly as the input data are massive and not available here.
-
-![](figures/experimental-design.png)
-
-### IMPORTANT NOTE for *in-situ* LST from OzFlux
-
-We have found an alternative strategy in processing *in-situ* LST, which does not consider the daylight saving time and does explicitly claim the 'seconds' timestep in the TOI (Time of Interests). Compared to the strategy used in our RSE paper (i.e., `4_lst_processing_scripts/00_process_ozflux_rse_version.R`), this strategy is expected to better coincide with the satellite overpass time. Please refer to the script `4_lst_processing_scripts/00_process_ozflux_updated.R` for more details.
-
-All the updated OzFlux LST data are available at `5_ozflux_lst/`.
-
-## Permalink
-
-If you are interested in having a comprehensive assessment of ubESTARFM, please refer to the dataset published in the [CSIRO Data Access Portal](https://doi.org/10.25919/rrpg-m948), which contains the full set of data (12 OzFlux sites across Australia for the period of 2013-2021) used in our RSE paper.
-
-The published link of this code is at [Zenodo](https://doi.org/10.5281/zenodo.8017282). You can also find a lite version at [ResearchGate](https://www.researchgate.net/publication/371376456_Unbiased_ESTARFM_ubESTARFM).
-
-## To cite ubESTARFM
-
-If you found this repository helpful, please kindly consider citing:
-
-```
-@article{YU2023113784,
-author = {Yi Yu and Luigi J. Renzullo and Tim R. McVicar and Brendan P. Malone and Siyuan Tian},
-title = {Generating daily 100 m resolution land surface temperature estimates continentally using an unbiased spatiotemporal fusion approach},
-journal = {Remote Sensing of Environment},
-volume = {297},
-pages = {113784},
-year = {2023},
-doi = {https://doi.org/10.1016/j.rse.2023.113784},
-url = {https://www.sciencedirect.com/science/article/pii/S0034425723003358}
-}
+model = train(
+    "inst/extdata/Landsat_LST_cloudrm_20160205.tif",
+    "inst/extdata/Landsat_LST_cloudrm_20160308.tif",
+    "inst/extdata/MOD11A1_LST_cloudrm_20160205.tif",
+    "inst/extdata/MOD11A1_LST_cloudrm_20160308.tif",
+    workers=4,
+)
+prediction = predict(
+    model,
+    "inst/extdata/MOD11A1_LST_cloudrm_20160218.tif",
+)
 ```
 
-## Conference talk
+## Batch prediction
 
-- Yu, Y., Renzullo, L. J., Tian, S. and Malone, B. P., 2023. An unbiased spatiotemporal fusion approach to generate daily 100 m spatial resolution land surface temperature over a continental scale, *EGU General Assembly 2023, Vienna, Austria, 24-28 April*, EGU23-1501. https://doi.org/10.5194/egusphere-egu23-1501
+Use `ubestarfm_predict_batch()` in R or `predict_batch()` in Python. Candidate
+search is performed once during training, while temporal differences and
+target-date missing values remain prediction-specific.
 
-## References
+The packed candidate cache is approximately 56 MiB for the bundled 400 by 400
+example with a 51 by 51 window. Exact per-pixel weight caching would require
+multiple gigabytes and is intentionally avoided.
 
-- Gao, F., Masek, J., Schwaller, M. and Hall, F., 2006. On the blending of the Landsat and MODIS surface reflectance: Predicting daily Landsat surface reflectance. *IEEE Transactions on Geoscience and Remote Sensing, 44*, 2207-2218. https://doi.org/10.1109/TGRS.2006.872081
+## Documentation
 
-- Zhu, X., Chen, J., Gao, F., Chen, X. and Masek, J. G., 2010. An enhanced spatial and temporal adaptive reflectance fusion model for complex heterogeneous regions. *Remote Sensing of Environment, 114*, 2610-2623. https://doi.org/10.1016/j.rse.2010.05.032
+- [R tutorial](docs/tutorials/r-single-and-batch.md)
+- [Python tutorial](docs/tutorials/python-single-and-batch.md)
+- [Model caching](docs/tutorials/model-caching.md)
+- [Published R API migration](docs/migration/from-published-r-api.md)
+- [Repository layout migration](docs/migration/repository-layout.md)
+- [Benchmarks](benchmarks/)
+- [Archived paper-processing scripts](legacy/paper-processing/)
+
+## Citation
+
+Yu, Y., Renzullo, L. J., McVicar, T. R., Malone, B. P., and Tian, S. (2023).
+Generating daily 100 m resolution land surface temperature estimates
+continentally using an unbiased spatiotemporal fusion approach.
+*Remote Sensing of Environment*, 297, 113784.
+https://doi.org/10.1016/j.rse.2023.113784
+
+## Data
+
+The bundled rasters are demonstration subsets. The full study dataset is
+available from the
+[CSIRO Data Access Portal](https://doi.org/10.25919/rrpg-m948).
