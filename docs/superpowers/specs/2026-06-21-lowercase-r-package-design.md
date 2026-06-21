@@ -1,7 +1,7 @@
 # Lowercase R Package Design
 
 **Date:** 2026-06-21
-**Status:** Pending written-spec review
+**Status:** Approved
 
 ## Purpose
 
