@@ -8,8 +8,8 @@ src/*.dll
 python/.venv/
 python/.pytest_cache/
 python/.ruff_cache/
-python/**/__pycache__/
-python/**/*.py[cod]
+**/__pycache__/
+**/*.py[cod]
 python/build/
 python/dist/
 python/*.egg-info/
