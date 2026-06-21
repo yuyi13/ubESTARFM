@@ -537,9 +537,9 @@ Run:
 ```bash
 rg -n \
   'library\\(ubESTARFM\\)|ubESTARFM:::|package = "ubESTARFM"|packageVersion\\("ubESTARFM"\\)|test_check\\("ubESTARFM"\\)|useDynLib\\(ubESTARFM|_ubESTARFM_ubestarfm_|R_init_ubESTARFM|ubESTARFM_\\*\\.tar\\.gz|ubESTARFM_3\\.0\\.0\\.9000\\.tar\\.gz' \
-  --glob '!legacy/**' \
-  --glob '!docs/superpowers/**' \
-  .
+  DESCRIPTION NAMESPACE R tests/testthat.R tests/testthat examples/R \
+  benchmarks tests/cross_language/run_r_fixture.R \
+  .github/workflows/r-check.yaml CONTRIBUTING.md .Rbuildignore
 ```
 
 Expected: no matches.
@@ -579,10 +579,12 @@ generated-file drift.
 Run:
 
 ```bash
-temp_root="$(mktemp -d)"
-mkdir -p "$temp_root/library"
-R CMD INSTALL --library="$temp_root/library" .
-R_LIBS_USER="$temp_root/library" Rscript -e \
+test_library="${TMPDIR:-/tmp}/ubestarfm-test-library-$(id -u)"
+user_library="$(Rscript -e 'cat(.libPaths()[1L])')"
+rm -rf "$test_library"
+mkdir -p "$test_library"
+R CMD INSTALL --library="$test_library" .
+R_LIBS_USER="$test_library:$user_library" Rscript -e \
   'library(ubestarfm); stopifnot("package:ubestarfm" %in% search())'
 ```
 
@@ -594,8 +596,18 @@ package.
 Run:
 
 ```bash
-R_LIBS_USER="$temp_root/library" Rscript - <<'RS'
+test_library="${TMPDIR:-/tmp}/ubestarfm-test-library-$(id -u)"
+user_library="$(Rscript -e 'cat(.libPaths()[1L])')"
+R_LIBS_USER="$test_library:$user_library" Rscript - <<'RS'
 library(ubestarfm)
+
+cluster <- parallel::makeCluster(2L)
+loaded <- parallel::clusterEvalQ(cluster, {
+  library(ubestarfm)
+  "package:ubestarfm" %in% search()
+})
+parallel::stopCluster(cluster)
+stopifnot(all(unlist(loaded)))
 
 data_directory <- "inst/extdata"
 model <- ubestarfm_train(
@@ -645,7 +657,13 @@ Expected: `R CMD check` ends with `Status: OK`.
 Run:
 
 ```bash
-PYTHONPATH=python/src python3 -m pytest tests python/tests -q
+test_library="${TMPDIR:-/tmp}/ubestarfm-test-library-$(id -u)"
+user_library="$(Rscript -e 'cat(.libPaths()[1L])')"
+rm -rf "$test_library"
+mkdir -p "$test_library"
+R CMD INSTALL --library="$test_library" ubestarfm_3.0.0.9000.tar.gz
+R_LIBS_USER="$test_library:$user_library" PYTHONPATH=python/src \
+  python3 -m pytest tests python/tests -q
 ```
 
 Expected: all Python, layout, example, and cross-language tests pass.
@@ -684,7 +702,8 @@ Expected: checksums pass and all local README links resolve.
 Remove only artifacts produced by this verification:
 
 ```bash
-rm -rf ubestarfm.Rcheck ubestarfm_3.0.0.9000.tar.gz "$temp_root"
+test_library="${TMPDIR:-/tmp}/ubestarfm-test-library-$(id -u)"
+rm -rf ubestarfm.Rcheck ubestarfm_3.0.0.9000.tar.gz "$test_library"
 ```
 
 Expected: source files and committed fixtures remain untouched.
