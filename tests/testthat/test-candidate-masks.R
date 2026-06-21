@@ -5,12 +5,12 @@
 # Last updated: 2026-06-21
 # Inputs: Small in-memory reference arrays.
 # Outputs: testthat assertions for candidate masks.
-# Usage: Rscript -e 'library(ubESTARFM); testthat::test_file("tests/testthat/test-candidate-masks.R")'
-# Dependencies: R packages testthat and ubESTARFM.
+# Usage: Rscript -e 'library(ubestarfm); testthat::test_file("tests/testthat/test-candidate-masks.R")'
+# Dependencies: R packages testthat and ubestarfm.
 
 test_that("candidate bits use column-major local-window order", {
   fixture <- small_reference_fixture()
-  result <- ubESTARFM:::ubestarfm_train_arrays(
+  result <- ubestarfm:::ubestarfm_train_arrays(
     fixture$fine_1,
     fixture$fine_2,
     fixture$coarse_1,
@@ -21,7 +21,7 @@ test_that("candidate bits use column-major local-window order", {
     workers = 1L
   )
 
-  center_bits <- ubESTARFM:::ubestarfm_unpack_candidates(
+  center_bits <- ubestarfm:::ubestarfm_unpack_candidates(
     result,
     row = 3L,
     col = 3L
@@ -37,7 +37,7 @@ test_that("candidate membership uses strict thresholds and valid references", {
   coarse_2 <- fine_1 + 20
   coarse_1[1, 2] <- NA_real_
 
-  model <- ubESTARFM:::ubestarfm_train_arrays(
+  model <- ubestarfm:::ubestarfm_train_arrays(
     fine_1,
     fine_2,
     coarse_1,
@@ -45,7 +45,7 @@ test_that("candidate membership uses strict thresholds and valid references", {
     window_radius = 1L,
     patch_size = 2L
   )
-  candidates <- ubESTARFM:::ubestarfm_unpack_candidates(
+  candidates <- ubestarfm:::ubestarfm_unpack_candidates(
     model,
     row = 1L,
     col = 1L
@@ -58,11 +58,11 @@ test_that("candidate membership uses strict thresholds and valid references", {
 test_that("candidate masks do not depend on correction method", {
   fixture <- small_reference_fixture()
   zero_bias <- do.call(
-    ubESTARFM:::ubestarfm_train_arrays,
+    ubestarfm:::ubestarfm_train_arrays,
     c(fixture, list(window_radius = 1L, patch_size = 5L, method = "zero_bias"))
   )
   baseline <- do.call(
-    ubESTARFM:::ubestarfm_train_arrays,
+    ubestarfm:::ubestarfm_train_arrays,
     c(fixture, list(window_radius = 1L, patch_size = 5L, method = "baseline"))
   )
 
@@ -72,7 +72,7 @@ test_that("candidate masks do not depend on correction method", {
 test_that("training is independent of target dates", {
   fixture <- small_reference_fixture()
   model <- do.call(
-    ubESTARFM:::ubestarfm_train_arrays,
+    ubestarfm:::ubestarfm_train_arrays,
     c(fixture, list(window_radius = 1L, patch_size = 5L))
   )
 

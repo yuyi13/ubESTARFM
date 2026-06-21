@@ -5,8 +5,8 @@
 # Last updated: 2026-06-21
 # Inputs: Bundled GeoTIFF fixtures and reusable models.
 # Outputs: testthat assertions for prediction objects and files.
-# Usage: Rscript -e 'library(ubESTARFM); testthat::test_file("tests/testthat/test-predict-api.R")'
-# Dependencies: R packages testthat, terra, and ubESTARFM.
+# Usage: Rscript -e 'library(ubestarfm); testthat::test_file("tests/testthat/test-predict-api.R")'
+# Dependencies: R packages testthat, terra, and ubestarfm.
 
 test_that("public single and batch predictions preserve geometry", {
   model <- train_example_model(window_radius = 2L, patch_size = 100L)

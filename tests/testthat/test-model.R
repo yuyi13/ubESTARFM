@@ -6,7 +6,7 @@
 # Inputs: In-memory valid and malformed model objects.
 # Outputs: testthat assertions for model validation.
 # Usage: Rscript -e 'testthat::test_file("tests/testthat/test-model.R")'
-# Dependencies: R packages testthat and ubESTARFM.
+# Dependencies: R packages testthat and ubestarfm.
 
 test_that("model validation rejects malformed models", {
   expect_error(

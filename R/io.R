@@ -5,7 +5,7 @@
 # Last updated: 2026-06-21
 # Inputs: Raster paths, SpatRaster objects, matrices, and raster templates.
 # Outputs: Validated raster data and SpatRaster prediction objects.
-# Usage: Internal package module; loaded through the ubESTARFM namespace.
+# Usage: Internal package module; loaded through the ubestarfm namespace.
 # Dependencies: R package terra.
 
 #' Read one raster layer

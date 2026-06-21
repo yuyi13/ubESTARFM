@@ -7,7 +7,7 @@
 # Inputs: Bundled GeoTIFFs and one output-directory command-line argument.
 # Outputs: Two prediction GeoTIFFs, one RDS model, and a model-size text file.
 # Usage: Rscript tests/cross_language/run_r_fixture.R <output-directory>
-# Dependencies: R package ubESTARFM.
+# Dependencies: R package ubestarfm.
 
 args <- commandArgs(trailingOnly = TRUE)
 if (length(args) != 1L) {
@@ -18,7 +18,7 @@ root <- normalizePath(".", mustWork = TRUE)
 output_directory <- normalizePath(args[1L], mustWork = TRUE)
 data_directory <- file.path(root, "inst", "extdata")
 
-library(ubESTARFM)
+library(ubestarfm)
 
 model <- ubestarfm_train(
   fine_1 = file.path(

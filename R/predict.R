@@ -5,7 +5,7 @@
 # Last updated: 2026-06-21
 # Inputs: A reusable model, coarse target rasters, ranges, and output paths.
 # Outputs: Fine-resolution prediction matrices and SpatRaster objects.
-# Usage: Internal package module; loaded through the ubESTARFM namespace.
+# Usage: Internal package module; loaded through the ubestarfm namespace.
 # Dependencies: R package terra and compiled ubESTARFM kernels.
 
 ubestarfm_validate_value_range <- function(value_range) {

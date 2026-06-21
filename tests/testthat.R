@@ -9,6 +9,6 @@
 # Dependencies: R packages ubESTARFM and testthat.
 
 library(testthat)
-library(ubESTARFM)
+library(ubestarfm)
 
-test_check("ubESTARFM")
+test_check("ubestarfm")

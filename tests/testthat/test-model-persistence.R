@@ -5,13 +5,13 @@
 # Last updated: 2026-06-21
 # Inputs: Small reusable models and temporary RDS paths.
 # Outputs: testthat assertions for model persistence.
-# Usage: Rscript -e 'library(ubESTARFM); testthat::test_file("tests/testthat/test-model-persistence.R")'
-# Dependencies: R packages testthat and ubESTARFM.
+# Usage: Rscript -e 'library(ubestarfm); testthat::test_file("tests/testthat/test-model-persistence.R")'
+# Dependencies: R packages testthat and ubestarfm.
 
 test_that("models survive compressed and uncompressed round trips", {
   fixture <- small_reference_fixture()
   model <- do.call(
-    ubESTARFM:::ubestarfm_train_arrays,
+    ubestarfm:::ubestarfm_train_arrays,
     c(fixture, list(window_radius = 1L, patch_size = 5L))
   )
 
@@ -27,7 +27,7 @@ test_that("models survive compressed and uncompressed round trips", {
 test_that("unsupported model schemas are rejected on load", {
   fixture <- small_reference_fixture()
   model <- do.call(
-    ubESTARFM:::ubestarfm_train_arrays,
+    ubestarfm:::ubestarfm_train_arrays,
     c(fixture, list(window_radius = 1L, patch_size = 5L))
   )
   model$schema_version <- 99L

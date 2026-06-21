@@ -5,8 +5,8 @@
 # Last updated: 2026-06-21
 # Inputs: Published function arguments and five reference or target rasters.
 # Outputs: A fine-resolution SpatRaster and output GeoTIFF.
-# Usage: Internal package module; loaded through the ubESTARFM namespace.
-# Dependencies: R package ubESTARFM.
+# Usage: Internal package module; loaded through the ubestarfm namespace.
+# Dependencies: R package ubestarfm.
 
 #' Published ubESTARFM compatibility wrapper
 #'

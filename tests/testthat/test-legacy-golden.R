@@ -5,8 +5,8 @@
 # Last updated: 2026-06-21
 # Inputs: Bundled reference rasters, target raster, and legacy fused GeoTIFF.
 # Outputs: testthat assertions for numerical and spatial compatibility.
-# Usage: Rscript -e 'library(ubESTARFM); testthat::test_file("tests/testthat/test-legacy-golden.R")'
-# Dependencies: R packages testthat, terra, and ubESTARFM.
+# Usage: Rscript -e 'library(ubestarfm); testthat::test_file("tests/testthat/test-legacy-golden.R")'
+# Dependencies: R packages testthat, terra, and ubestarfm.
 
 test_that("modern R matches the published fused result", {
   model <- train_example_model(

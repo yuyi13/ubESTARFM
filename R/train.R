@@ -5,7 +5,7 @@
 # Last updated: 2026-06-21
 # Inputs: Two fine and two coarse reference rasters or matrices.
 # Outputs: Versioned ubestarfm_model objects.
-# Usage: Internal package module; loaded through the ubESTARFM namespace.
+# Usage: Internal package module; loaded through the ubestarfm namespace.
 # Dependencies: R packages terra and Rcpp plus compiled ubESTARFM kernels.
 
 ubestarfm_make_patches <- function(nrow, ncol, patch_size) {

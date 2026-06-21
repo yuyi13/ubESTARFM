@@ -7,7 +7,7 @@
 # Inputs: Bundled GeoTIFFs and --output-dir.
 # Outputs: R benchmark JSON and Markdown reports.
 # Usage: Rscript benchmarks/benchmark.R --output-dir benchmarks/results
-# Dependencies: R package ubESTARFM.
+# Dependencies: R package ubestarfm.
 
 args <- commandArgs(trailingOnly = TRUE)
 output_index <- match("--output-dir", args)
@@ -22,7 +22,7 @@ script_path <- normalizePath(sub("^--file=", "", file_arg[1L]), mustWork = TRUE)
 root <- normalizePath(file.path(dirname(script_path), ".."), mustWork = TRUE)
 data_directory <- file.path(root, "inst", "extdata")
 
-library(ubESTARFM)
+library(ubestarfm)
 
 training <- system.time({
   model <- ubestarfm_train(

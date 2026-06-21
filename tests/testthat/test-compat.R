@@ -5,8 +5,8 @@
 # Last updated: 2026-06-21
 # Inputs: Bundled reference and target GeoTIFFs.
 # Outputs: testthat assertions for the compatibility wrapper.
-# Usage: Rscript -e 'library(ubESTARFM); testthat::test_file("tests/testthat/test-compat.R")'
-# Dependencies: R packages testthat, terra, and ubESTARFM.
+# Usage: Rscript -e 'library(ubestarfm); testthat::test_file("tests/testthat/test-compat.R")'
+# Dependencies: R packages testthat, terra, and ubestarfm.
 
 test_that("published wrapper matches explicit train and predict", {
   temporary_directory <- tempfile()

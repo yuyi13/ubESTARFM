@@ -7,7 +7,7 @@
 # Inputs: Bundled GeoTIFFs under inst/extdata and --output-dir.
 # Outputs: One fused GeoTIFF.
 # Usage: Rscript examples/R/single_target.R --output-dir examples/outputs
-# Dependencies: R package ubESTARFM.
+# Dependencies: R package ubestarfm.
 
 args <- commandArgs(trailingOnly = TRUE)
 output_index <- match("--output-dir", args)
@@ -26,7 +26,7 @@ script_path <- normalizePath(sub("^--file=", "", file_arg[1L]), mustWork = TRUE)
 root <- normalizePath(file.path(dirname(script_path), "..", ".."), mustWork = TRUE)
 data_directory <- file.path(root, "inst", "extdata")
 
-library(ubESTARFM)
+library(ubestarfm)
 
 model <- ubestarfm_train(
   fine_1 = file.path(data_directory, "Landsat_LST_cloudrm_20160205.tif"),

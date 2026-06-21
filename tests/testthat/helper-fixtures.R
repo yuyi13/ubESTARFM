@@ -6,13 +6,13 @@
 # Inputs: Installed package example data.
 # Outputs: Helper functions and in-memory test fixtures.
 # Usage: Loaded automatically by testthat.
-# Dependencies: R package ubESTARFM.
+# Dependencies: R package ubestarfm.
 
 example_path <- function(filename) {
   installed_path <- system.file(
     "extdata",
     filename,
-    package = "ubESTARFM",
+    package = "ubestarfm",
     mustWork = FALSE
   )
   if (nzchar(installed_path)) {
@@ -67,7 +67,7 @@ reference_predict_pixel <- function(model, coarse_target, row, col, value_range)
   target_valid <- model$reference_valid & is.finite(coarse_target)
   window_valid <- target_valid[rows, cols, drop = FALSE]
 
-  candidates <- ubESTARFM:::ubestarfm_unpack_candidates(
+  candidates <- ubestarfm:::ubestarfm_unpack_candidates(
     model,
     row = row,
     col = col

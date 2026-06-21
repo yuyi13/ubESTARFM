@@ -5,17 +5,17 @@
 # Last updated: 2026-06-21
 # Inputs: Bundled GeoTIFFs and small in-memory arrays.
 # Outputs: testthat assertions for the training API.
-# Usage: Rscript -e 'library(ubESTARFM); testthat::test_file("tests/testthat/test-train.R")'
-# Dependencies: R packages testthat and ubESTARFM.
+# Usage: Rscript -e 'library(ubestarfm); testthat::test_file("tests/testthat/test-train.R")'
+# Dependencies: R packages testthat and ubestarfm.
 
 test_that("parallel and sequential training are deterministic", {
   fixture <- small_reference_fixture()
   sequential <- do.call(
-    ubESTARFM:::ubestarfm_train_arrays,
+    ubestarfm:::ubestarfm_train_arrays,
     c(fixture, list(window_radius = 1L, patch_size = 2L, workers = 1L))
   )
   parallel <- do.call(
-    ubESTARFM:::ubestarfm_train_arrays,
+    ubestarfm:::ubestarfm_train_arrays,
     c(fixture, list(window_radius = 1L, patch_size = 2L, workers = 2L))
   )
 

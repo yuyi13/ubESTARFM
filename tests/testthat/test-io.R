@@ -6,7 +6,7 @@
 # Inputs: Bundled GeoTIFF fixtures and in-memory SpatRaster objects.
 # Outputs: testthat assertions for raster I/O behavior.
 # Usage: Rscript -e 'testthat::test_file("tests/testthat/test-io.R")'
-# Dependencies: R packages testthat, terra, and ubESTARFM.
+# Dependencies: R packages testthat, terra, and ubestarfm.
 
 test_that("single-layer GeoTIFFs load as row-column matrices", {
   input <- ubestarfm_read_raster(
