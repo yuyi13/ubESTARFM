@@ -1,0 +1,31 @@
+name: Python tests
+
+on:
+  push:
+    branches: ["master", "main"]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.12", "3.13"]
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Install package
+        run: python -m pip install -e 'python[test]'
+
+      - name: Lint
+        run: python -m ruff check python tests examples/python benchmarks/benchmark.py
+
+      - name: Unit and layout tests
+        run: python -m pytest python/tests tests/layout -v
+
+      - name: Compile archival Python script
+        run: python -m py_compile legacy/paper-processing/02_process_landsat_lst.py

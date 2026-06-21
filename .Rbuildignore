@@ -9,6 +9,7 @@
 ^\.github$
 ^\.git$
 ^\.pytest_cache$
+^\.ruff_cache$
 ^.*\.Rproj$
 ^\.Rproj\.user$
 ^ubESTARFM_.*\.tar\.gz$

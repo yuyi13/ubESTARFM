@@ -393,6 +393,7 @@ def fit_predict_batch(
     prediction_options = {
         key: kwargs.pop(key) for key in list(kwargs) if key in prediction_keys
     }
+    prediction_options["workers"] = kwargs.get("workers", 1)
     model = train(fine_1, fine_2, coarse_1, coarse_2, **kwargs)
     return predict_batch(model, coarse_targets, **prediction_options)
 

@@ -55,3 +55,33 @@ def test_geometry_mismatch_is_rejected() -> None:
 
     with pytest.raises(ValueError, match="same dimensions, transform, and CRS"):
         validate_geometry([first, second])
+
+
+def test_geometry_accepts_floating_point_equivalent_transforms() -> None:
+    first = RasterData(
+        values=np.ones((2, 2), dtype=np.float64),
+        profile={
+            "height": 2,
+            "width": 2,
+            "transform": from_origin(146, -34.8, 0.001, 0.001),
+            "crs": CRS.from_epsg(4326),
+            "nodata": np.nan,
+            "dtype": "float64",
+            "count": 1,
+            "driver": "GTiff",
+        },
+    )
+    second = RasterData(
+        values=np.ones((2, 2), dtype=np.float64),
+        profile={
+            **first.profile,
+            "transform": from_origin(
+                146,
+                -34.8,
+                0.001,
+                0.001 + 2e-17,
+            ),
+        },
+    )
+
+    validate_geometry([first, second])

@@ -2,9 +2,9 @@
 
 Install the package from the repository root:
 
-```r
-install.packages(c("terra", "Rcpp"))
-install.packages(".", repos = NULL, type = "source")
+```bash
+Rscript -e 'install.packages(c("terra", "Rcpp"))'
+R CMD INSTALL .
 ```
 
 Train the two reference dates once:

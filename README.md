@@ -16,10 +16,12 @@ implementation is preserved unchanged in
 
 ## R quick start
 
-```r
-install.packages(c("terra", "Rcpp"))
-install.packages(".", repos = NULL, type = "source")
+```bash
+Rscript -e 'install.packages(c("terra", "Rcpp"))'
+R CMD INSTALL .
+```
 
+```r
 library(ubESTARFM)
 
 model <- ubestarfm_train(

@@ -5,6 +5,7 @@
 .Rproj.user/
 *.Rproj
 .pytest_cache/
+.ruff_cache/
 src/*.o
 src/*.so
 src/*.dll

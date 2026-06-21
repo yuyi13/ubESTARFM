@@ -84,18 +84,14 @@ def validate_geometry(rasters: list[RasterData]) -> None:
         return
 
     first = rasters[0]
-    expected = (
-        first.values.shape,
-        first.profile["transform"],
-        first.profile["crs"],
-    )
     for raster in rasters[1:]:
-        observed = (
-            raster.values.shape,
+        shape_matches = raster.values.shape == first.values.shape
+        transform_matches = first.profile["transform"].almost_equals(
             raster.profile["transform"],
-            raster.profile["crs"],
+            precision=1e-12,
         )
-        if observed != expected:
+        crs_matches = raster.profile["crs"] == first.profile["crs"]
+        if not (shape_matches and transform_matches and crs_matches):
             raise ValueError(
                 "All rasters must have the same dimensions, transform, and CRS."
             )
