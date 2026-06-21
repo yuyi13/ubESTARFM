@@ -1,3 +1,14 @@
+#!/usr/bin/env Rscript
+# Script: 10_figures.R
+# Objective: Reproduce the figures used in the published ubESTARFM study.
+# Author: Yi Yu
+# Created: 2023-01-01
+# Last updated: 2026-06-21
+# Inputs: Archived study metrics and raster products at the configured paths.
+# Outputs: Publication figure files.
+# Usage: Rscript legacy/paper-processing/10_figures.R
+# Dependencies: R packages stringr, ggsci, raster, and fields; archived study data.
+
 # this script is about how we make plots for the paper
 # no runable code here, just for reference
 # the figures indicated in this script are available from the paper
@@ -359,7 +370,6 @@ for (k in 1:12){
 }
 
 dev.off()
-xlim=c(1,6), ylim=c(1,3)
 
 # make a legend
 png('/g/data/os22/users/yu/lst_project/figures/legend.png', width=800, height=800)
